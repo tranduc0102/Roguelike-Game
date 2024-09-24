@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -7,6 +8,13 @@ public class Bullet : MonoBehaviour
     public Transform enemy;
     public Rigidbody2D rb;
     public Vector3 toward;
+    protected string nameTag;
+
+    public string NameTag
+    {
+        get => nameTag;
+        set => nameTag = value;
+    }
     public float Speed
     {
         get => speed;
@@ -20,7 +28,15 @@ public class Bullet : MonoBehaviour
     
     private void OnEnable()
     {
+        
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    public void Init(Transform _enemy, float _speed, string _nameTag)
+    {
+        enemy = _enemy;
+        speed = _speed;
+        nameTag = _nameTag;
     }
 
     private void Start()
@@ -45,7 +61,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag(nameTag))
         {
             PoolingManager.Despawn(this.gameObject);
             Debug.Log("OK");   
