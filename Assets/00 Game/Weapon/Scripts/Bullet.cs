@@ -37,7 +37,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PoolingManager.Despawn(this.gameObject);
-        Debug.Log("OK");
+        if (other.CompareTag("Enemy"))
+        {
+            PoolingManager.Despawn(this.gameObject);
+            Debug.Log("OK");   
+        }
     }
 }
