@@ -4,8 +4,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private float speed = 5f;
-    private Transform enemy;
-
+    public Transform enemy;
+    public Rigidbody2D rb;
+    public Vector3 toward;
     public float Speed
     {
         get => speed;
@@ -15,6 +16,17 @@ public class Bullet : MonoBehaviour
     {
         get => enemy;
         set => enemy = value;
+    }
+    
+    private void OnEnable()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        toward = (enemy.position - transform.position).normalized;
+       
     }
 
     private void Update()
@@ -26,12 +38,8 @@ public class Bullet : MonoBehaviour
     {
         if (enemy != null)
         {
-            Vector3 toward = (enemy.position - transform.position).normalized;
-            transform.position += toward * Time.deltaTime * speed;   
-        }
-        else
-        {
-            return;
+           
+           transform.Translate(toward * Time.deltaTime * speed);
         }
     }
 

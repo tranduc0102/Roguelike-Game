@@ -573,6 +573,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Range Weapon (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4677979924517785911, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6007055728451596010, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1
@@ -1063,7 +1067,6 @@ GameObject:
   - component: {fileID: 1326290511}
   - component: {fileID: 1326290510}
   - component: {fileID: 1326290513}
-  - component: {fileID: 1326290514}
   m_Layer: 6
   m_Name: Enemy Test
   m_TagString: Enemy
@@ -1187,33 +1190,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!50 &1326290514
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326290509}
-  m_BodyType: 1
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &1394805202
 GameObject:
   m_ObjectHideFlags: 0
@@ -1415,6 +1391,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 6225088261435104037, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1521,6 +1501,10 @@ PrefabInstance:
     - target: {fileID: 4677979924517785911, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
       propertyPath: m_Name
       value: Range Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4677979924517785911, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6007055728451596010, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
       propertyPath: m_LocalPosition.x
