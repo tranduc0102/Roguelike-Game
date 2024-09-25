@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df83b96d80f0a942a966f9736e9830d, type: 3}
+  m_Name: Database
+  m_EditorClassIdentifier: 
+  prefabData:
+    wavePrefab: {fileID: 6807063821068699476, guid: d36b30d00f368ea4c9237c27a0bc36dd, type: 3}
+    miniWavePrefab: {fileID: 416803599903453693, guid: 2cad538b72694784fbcfd813d2d8d79a, type: 3}
+  listPlayerData:
+  - playerName: Basic Character
+    playerID: 0
+    basicHp: 15
+    basicDamage: 10
+    basicSpeed: 4
+    animator: {fileID: 9100000, guid: 65896ca2c02fe5945ba22b2bce8a3d75, type: 2}
+  listEnemyData:
+  - enemyName: Melee Basic Enemy
+    enemyID: 0
+    maxHp: 10
+    damage: 1
+    speed: 2
+    timeAttack: 1
+    attackRange: 2
+    enemyPrefab: {fileID: 4584132461024532899, guid: 4b58aa99fdd9c5542ae2cc3ce72786e8, type: 3}
+  - enemyName: Ranged Basic Enemy
+    enemyID: 1
+    maxHp: 8
+    damage: 2
+    speed: 3
+    timeAttack: 1
+    attackRange: 7
+    enemyPrefab: {fileID: 4977799922060014217, guid: ca499ee699010314399c12be0c1082c6, type: 3}
