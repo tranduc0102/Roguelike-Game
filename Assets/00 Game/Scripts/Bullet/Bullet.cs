@@ -28,7 +28,7 @@ public class Bullet : MonoBehaviour
     
     public void Init(Vector3 _enemy, float _speed, string _nameTag)
     {
-        rb = GetComponent<Rigidbody2D>();
+        if(rb==  null)rb = GetComponent<Rigidbody2D>();
         enemy = _enemy;
         speed = _speed;
         nameTag = _nameTag;
