@@ -40,7 +40,7 @@ public class RangeWeapon : Weapon
         if (timeDelay > attackDelay)
         {
             Bullet bullet = PoolingManager.Spawn(prefabBullet, hitdetection.position, quaternion.identity);
-            bullet.Init(closeEnemy.transform,speedAttack,"Enemy");
+            bullet.Init(closeEnemy.transform.position,speedAttack,"Enemy");
             timeDelay = 0f;
         }
     }
