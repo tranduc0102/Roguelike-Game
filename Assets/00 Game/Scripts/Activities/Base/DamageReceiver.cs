@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class DamageReceiver : MonoBehaviour
 {
+    public DataBase data;
     [SerializeField] protected float maxHp;
     [SerializeField] protected float curHp;
 

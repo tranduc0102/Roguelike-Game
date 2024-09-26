@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class DamageSender : MonoBehaviour
 {
     [SerializeField] protected float damage;
+    public DataBase data;
 
     protected virtual void OnEnable()
     {
@@ -13,13 +14,13 @@ public abstract class DamageSender : MonoBehaviour
 
     protected abstract void LoadData();
 
-    protected virtual void SendDamage(Transform enemy)
+    public virtual void SendDamage(Transform enemy)
     {
         DamageReceiver damageReceiver = enemy.GetComponent<DamageReceiver>();
         SendDamage(damageReceiver);
     }
 
-    protected virtual void SendDamage(DamageReceiver damageReceiver)
+    public virtual void SendDamage(DamageReceiver damageReceiver)
     {
         if (damageReceiver == null) return;
         damageReceiver.Deduct(damage);

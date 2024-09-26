@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class PlayerDamageReceiver : DamageReceiver
 {
-    public DataBase data;
+    
     protected override void LoadData()
     {
         maxHp = data.listPlayerData[0].basicHp;
+    }
+
+    protected override void OnDead()
+    {
+        Debug.Log("Game Over");
     }
 }

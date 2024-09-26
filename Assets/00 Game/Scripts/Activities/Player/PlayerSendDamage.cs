@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerSendDamage : DamageSender
 {
-    public DataBase data;
+    public int playerIndex = 0;
     protected override void LoadData()
     {
-        damage = data.listPlayerData[0].basicDamage;
+        damage = data.listPlayerData[playerIndex].basicDamage;
     }
 }
