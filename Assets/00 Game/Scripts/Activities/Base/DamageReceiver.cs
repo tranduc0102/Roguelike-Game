@@ -27,6 +27,7 @@ public abstract class DamageReceiver : MonoBehaviour
 
     protected virtual void OnDead()
     {
-        PoolingManager.Despawn(transform.parent.gameObject);
+        PoolingManager.Despawn(transform.gameObject);
+       
     }
 }

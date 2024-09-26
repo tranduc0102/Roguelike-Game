@@ -105,8 +105,6 @@ public class Weapon : MonoBehaviour
         {
             if (!enemyDamaged.Contains(enemy.GetComponent<BaseEnemy>()))
             {
-                Debug.Log("Enemy be attacked");
-                // Xử lí quái được nhận dâmge
                 enemyDamaged.Add(enemy.GetComponent<BaseEnemy>());
             }
         }

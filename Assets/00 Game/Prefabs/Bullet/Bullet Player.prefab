@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2990413598730948132}
   - component: {fileID: 4047910024881667717}
   - component: {fileID: 784052022763699808}
+  - component: {fileID: 6765392900625147003}
+  - component: {fileID: 5314677044130520051}
   m_Layer: 6
   m_Name: Bullet Player
   m_TagString: Untagged
@@ -161,6 +163,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8ebb1d32f54948918ba3b2e768e5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {x: 0, y: 0, z: 0}
   rb: {fileID: 0}
   toward: {x: 0, y: 0, z: 0}
+--- !u!114 &6765392900625147003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416670828946915991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fd3455218e5f764e8f015f274035acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damageSender: {fileID: 0}
+  enemyTag: Enemy
+--- !u!114 &5314677044130520051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8416670828946915991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad5103c07906d514680999766f52f730, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  data: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
+  playerIndex: 0
