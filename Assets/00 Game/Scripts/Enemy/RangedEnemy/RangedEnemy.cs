@@ -19,7 +19,7 @@ public class RangedEnemy : BaseEnemy
         base.Attack();
      
         Bullet bullet = PoolingManager.Spawn(bulletPrefab, transform.position, Quaternion.identity);
-        bullet.Init(player,bulletSpeed,"Player");
+        bullet.Init(player.transform.position,bulletSpeed,"Player");
 
     }
     

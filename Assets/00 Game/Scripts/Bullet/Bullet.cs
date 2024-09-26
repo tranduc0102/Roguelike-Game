@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private float speed = 5f;
-    public Transform enemy;
+    public Vector3 enemy;
     public Rigidbody2D rb;
     public Vector3 toward;
     protected string nameTag;
@@ -20,48 +20,34 @@ public class Bullet : MonoBehaviour
         get => speed;
         set => speed=value;
     }
-    public Transform Enemy
+    public Vector3 Enemy
     {
         get => enemy;
         set => enemy = value;
     }
     
-    private void OnEnable()
+    public void Init(Vector3 _enemy, float _speed, string _nameTag)
     {
-        
-        rb = GetComponent<Rigidbody2D>();
-    }
-
-    public void Init(Transform _enemy, float _speed, string _nameTag)
-    {
+        if(rb==  null)rb = GetComponent<Rigidbody2D>();
         enemy = _enemy;
         speed = _speed;
         nameTag = _nameTag;
-    }
-
-    private void Start()
-    {
-        toward = (enemy.position - transform.position).normalized;
-       
-    }
-
-    private void Update()
-    {
         AttackEnemy();
     }
-
-    public void AttackEnemy()
-    {
-        if (enemy != null)
-        {
-           
-           transform.Translate(toward * Time.deltaTime * speed);
-        }
+    private void AttackEnemy()
+    { 
+        toward = (enemy- transform.position).normalized;
+        rb.velocity=(toward * speed);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag(nameTag))
+        {
+            PoolingManager.Despawn(this.gameObject);
+        }
+
+        if (other.CompareTag("Finish"))
         {
             PoolingManager.Despawn(this.gameObject);
         }
