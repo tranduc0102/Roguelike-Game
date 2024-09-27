@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
     protected float timeDelay;
     private Animator animator;
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         Load();
     }

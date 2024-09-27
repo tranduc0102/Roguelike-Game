@@ -24,8 +24,9 @@ public abstract class BaseEnemy : MonoBehaviour
     }
 
     [SerializeField] protected EnemyState enemyState;
-    protected void OnEnable()
+    protected virtual void OnEnable()
     {
+       
         LoadPlayer();
         timer = 0f;
         HideEnemy();
@@ -36,8 +37,7 @@ public abstract class BaseEnemy : MonoBehaviour
     {
         if (player != null) return;
         player = GameObject.Find("Player").transform;
-        if(player != null)
-            Debug.Log(transform.name + " Load Player successful");
+       
     }
 
     protected virtual void ChangeState()

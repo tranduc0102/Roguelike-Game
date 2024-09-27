@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 5253652066596153276}
   - component: {fileID: 8897283880131047157}
   - component: {fileID: 1739912919810880810}
+  - component: {fileID: 1672384127117025882}
   m_Layer: 0
   m_Name: Melee Weapon
   m_TagString: Untagged
@@ -90,7 +91,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6225088261435104037}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitdetection: {fileID: 7890128807202151170}
   radiusHit: 0.3
+  state: 0
   attackRange: 2.5
   layerEnemy:
     serializedVersion: 2
@@ -119,7 +121,7 @@ MonoBehaviour:
   damage: 0
   aimLeft: 12
   attackDelay: 0.1
-  animator: {fileID: 1739912919810880810}
+  speedAttack: 2
 --- !u!95 &1739912919810880810
 Animator:
   serializedVersion: 5
@@ -141,6 +143,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1672384127117025882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6225088261435104037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f24d660c89095a747b89292c86ec3470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  data: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
+  playerIndex: 0
 --- !u!1 &6803208487106206137
 GameObject:
   m_ObjectHideFlags: 0

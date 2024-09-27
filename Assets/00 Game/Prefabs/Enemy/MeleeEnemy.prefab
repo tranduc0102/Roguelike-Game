@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2498457782067533073}
   - component: {fileID: 4584132461024532899}
   - component: {fileID: 5673106302978052044}
+  - component: {fileID: 352272026879413115}
   m_Layer: 6
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -103,6 +104,8 @@ MonoBehaviour:
   objActive: {fileID: 0}
   _collider2D: {fileID: 0}
   enemyState: 0
+  meleeEnemySendDamage: {fileID: 0}
+  enemyIndex: 0
 --- !u!114 &5673106302978052044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +121,21 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
   maxHp: 0
   curHp: 0
+  enemyIndex: 0
+--- !u!114 &352272026879413115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1146375632450797182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba83a782b26f8634cb5c7dc723af4aa7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  data: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
   enemyIndex: 0
 --- !u!1 &7228137042228694175
 GameObject:
