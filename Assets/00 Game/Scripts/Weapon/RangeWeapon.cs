@@ -20,7 +20,7 @@ public class RangeWeapon : Weapon
 
     protected override void AutoAim()
     {
-        BaseEnemy closeEnemy = GetEnemy();
+        BaseEnemy closeEnemy = GetClosestEnemy();
         Vector2 targetPoint = Vector2.up;
         if (closeEnemy != null)
         {

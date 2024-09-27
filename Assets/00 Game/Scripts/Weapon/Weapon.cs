@@ -53,7 +53,7 @@ public class Weapon : MonoBehaviour
 
     protected virtual void AutoAim()
     {
-        BaseEnemy closeEnemy = GetEnemy();
+        BaseEnemy closeEnemy = GetClosestEnemy();
         Vector2 targetPoint = Vector2.up;
         if (closeEnemy != null)
         {
@@ -90,7 +90,7 @@ public class Weapon : MonoBehaviour
     }
     protected virtual void Attacking()
     {
-        Attack();
+        ScanEnemy();
     }
     protected virtual void StopAttack()
     {
@@ -98,7 +98,7 @@ public class Weapon : MonoBehaviour
         enemyDamaged.Clear();
     }
 
-    protected virtual void Attack()
+    protected virtual void ScanEnemy()
     {
         Collider2D[] enemies = Physics2D.OverlapCircleAll(hitdetection.position, radiusHit, layerEnemy);
         foreach (var enemy in enemies)
@@ -115,7 +115,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    protected virtual BaseEnemy GetEnemy()
+    protected virtual BaseEnemy GetClosestEnemy()
     {
         BaseEnemy enemy = null;
         float minRange = attackRange;
