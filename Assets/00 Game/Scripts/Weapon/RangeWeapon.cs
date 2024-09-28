@@ -5,11 +5,13 @@ using UnityEngine;
 public class RangeWeapon : Weapon
 {
     [SerializeField] protected Bullet prefabBullet;
+    
     protected override void Load()
     {
         enemyDamaged = new List<BaseEnemy>();
         layerEnemy = LayerMask.GetMask("Enemy");
         hitdetection = GetComponent<Transform>().GetChild(0).GetChild(1);
+       
     }
 
     protected override void StartAttack()

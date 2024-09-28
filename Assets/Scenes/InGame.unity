@@ -1053,6 +1053,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6007055728451596010, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
   m_PrefabInstance: {fileID: 202502418}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1242031488 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7890128807202151170, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+  m_PrefabInstance: {fileID: 1839061718}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1246361680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,11 +1338,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Weapon
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8897283880131047157, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6225088261435104037, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1882518963}
   m_SourcePrefab: {fileID: 100100000, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+--- !u!1 &1882518962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6225088261435104037, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+  m_PrefabInstance: {fileID: 1839061718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1882518963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1882518962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99dccbccd822a5049994e95973f31655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitdetection: {fileID: 1242031488}
+  radiusHit: 0.3
+  state: 0
+  attackRange: 2.5
+  layerEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  damage: 0
+  aimLeft: 12
+  attackDelay: 0.1
+  speedAttack: 2
+  playerSendDamage: {fileID: 0}
 --- !u!1 &2017475467
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class PlayerBulletDamageSender : DamageSender
 {
-    public int playerIndex = 0;
+    public float Damage
+    {
+        get => damage;
+        set => damage = value;
+    }
+
+    protected override void LoadCtrl()
+    {
+        
+    }
+
     protected override void LoadData()
     {
-        damage = data.listPlayerData[playerIndex].basicDamage;
+        
     }
 }

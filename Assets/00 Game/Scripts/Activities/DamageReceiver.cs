@@ -4,16 +4,18 @@ using UnityEngine;
 
 public abstract class DamageReceiver : MonoBehaviour
 {
-    public DataBase data;
+   
     [SerializeField] protected float maxHp;
     [SerializeField] protected float curHp;
 
     protected virtual void OnEnable()
     {
+        LoadCtrl();
         LoadData();
         curHp = maxHp;
     }
 
+    protected abstract void LoadCtrl();
     protected abstract void LoadData();
 
     public virtual void Deduct(float damage)

@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class EnemyBulletDamgeSender : DamageSender
 {
-    public int enemyId;
     
+    public float Damage
+    {
+        get => damage;
+        set => damage = value;
+    }
+
+    protected override void LoadCtrl()
+    {
+        
+    }
+
     protected override void LoadData()
     {
-        damage = data.listEnemyData[enemyId].damage;
+        
     }
 }

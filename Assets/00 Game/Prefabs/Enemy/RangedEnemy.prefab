@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8554973469724238529}
   - component: {fileID: 4977799922060014217}
   - component: {fileID: 104076991491594243}
+  - component: {fileID: 8064288328161874055}
   m_Layer: 6
   m_Name: RangedEnemy
   m_TagString: Enemy
@@ -107,9 +108,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18d43c430c0ed6448f501f34354f293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
   maxHp: 0
   curHp: 0
+  enemyCtrl: {fileID: 0}
+--- !u!114 &8064288328161874055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994380487498401370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64b2cdaf8bc739b4886216e02d96c5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyData: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
   enemyIndex: 1
 --- !u!1 &4912122340724579622
 GameObject:
