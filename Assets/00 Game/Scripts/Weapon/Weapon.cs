@@ -17,7 +17,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected float aimLeft = 12f;
     [SerializeField] protected float attackDelay=0.1f;
     [SerializeField] protected float speedAttack = 2f;
-    protected List<BaseEnemy> enemyDamaged;
+    protected List<EnemyCtrl> enemyDamaged;
     protected float timeDelay;
     private Animator animator;
     
@@ -31,7 +31,7 @@ public class Weapon : MonoBehaviour
     protected virtual void Load()
     {
         animator = GetComponent<Animator>();
-        enemyDamaged = new List<BaseEnemy>();
+        enemyDamaged = new List<EnemyCtrl>();
         layerEnemy = LayerMask.GetMask("Enemy");
         if (transform.GetChild(0)!= null)
         {
@@ -58,7 +58,7 @@ public class Weapon : MonoBehaviour
 
     protected virtual void AutoAim()
     {
-        BaseEnemy closeEnemy = GetClosestEnemy();
+        EnemyCtrl closeEnemy = GetClosestEnemy();
         Vector2 targetPoint = Vector2.up;
         if (closeEnemy != null)
         {
@@ -103,9 +103,9 @@ public class Weapon : MonoBehaviour
     {
     }
 
-    protected virtual BaseEnemy GetClosestEnemy()
+    protected virtual EnemyCtrl GetClosestEnemy()
     {
-        BaseEnemy enemy = null;
+        EnemyCtrl enemy = null;
         float minRange = attackRange;
         Collider2D[] enemies = Physics2D.OverlapCircleAll(transform.position, attackRange, layerEnemy);
         if (enemies.Length <= 0)
@@ -113,7 +113,7 @@ public class Weapon : MonoBehaviour
         
         foreach (var enm in enemies)
         {
-            BaseEnemy enemyChecked = enm.GetComponent<BaseEnemy>();
+            EnemyCtrl enemyChecked = enm.GetComponent<EnemyCtrl>();
             if (enemyChecked != null)
             {
                 float distance = Vector2.Distance(transform.position , enemyChecked.transform.position);

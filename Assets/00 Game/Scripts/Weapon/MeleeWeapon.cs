@@ -16,9 +16,9 @@ public class MeleeWeapon : Weapon
         Collider2D[] enemies = Physics2D.OverlapCircleAll(hitdetection.position, radiusHit, layerEnemy);
         foreach (var enemy in enemies)
         {
-            if (!enemyDamaged.Contains(enemy.GetComponent<BaseEnemy>()))
+            if (!enemyDamaged.Contains(enemy.GetComponent<EnemyCtrl>()))
             {
-                enemyDamaged.Add(enemy.GetComponent<BaseEnemy>());
+                enemyDamaged.Add(enemy.GetComponent<EnemyCtrl>());
                 DoMeleeAttack(enemy.transform);
             }
         }

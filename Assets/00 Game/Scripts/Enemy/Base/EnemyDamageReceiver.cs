@@ -18,4 +18,9 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         maxHp = enemyCtrl.MaxHp;
     }
+
+    protected override void OnDead()
+    {
+        enemyCtrl.EnemyDespawner.Despawning();
+    }
 }

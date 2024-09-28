@@ -8,13 +8,17 @@ public class EnemyCtrl : MonoBehaviour
 {
     // dùng để quản lý các liên kết, các dữ liệu của enemy
     // khi có thay đổi hoặc lấy dữ liệu các scrip sẽ lấy thông tin từ scrip này
-    //public DataBase enemyData;
-
+    
+    //Scripts
     [SerializeField] protected EnemyMovement enemyMovement;
     [SerializeField] protected EnemyAttack enemyAttack;
+    [SerializeField] protected EnemyDespawner enemyDespawner;
     
+    //Transforms
     [SerializeField] protected Transform player;
-    public int enemyID;
+    
+    //Specifications
+    [SerializeField] protected int enemyID;
     [SerializeField] protected float maxHP;
     
     [SerializeField] protected float damage;
@@ -54,8 +58,8 @@ public class EnemyCtrl : MonoBehaviour
     public EnemyMovement EnemyMovement => enemyMovement;
 
     public EnemyAttack EnemyAttack => enemyAttack;
-   
 
+    public EnemyDespawner EnemyDespawner => enemyDespawner;
     protected virtual void OnEnable()
     {
         LoadComponent();
@@ -85,6 +89,7 @@ public class EnemyCtrl : MonoBehaviour
     {
         LoadEnemyMovement();
         LoadEnemyAttack();
+        LoadEnemyDespawner();
     }
 
     protected virtual void LoadEnemyMovement()
@@ -96,6 +101,12 @@ public class EnemyCtrl : MonoBehaviour
     {
         if (enemyAttack != null) return;
         enemyAttack = transform.GetComponentInChildren<EnemyAttack>();
+    }
+
+    protected virtual void LoadEnemyDespawner()
+    {
+        if (enemyDespawner != null) return;
+        enemyDespawner = transform.GetComponentInChildren<EnemyDespawner>();
     }
 
 }
