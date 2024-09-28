@@ -11,6 +11,7 @@ public class EnemyAttack : ComponentBehavior
     {
         base.LoadComponent();
         LoadCtrl();
+        LoadData();
     }
 
     protected virtual void LoadCtrl()

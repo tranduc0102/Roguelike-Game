@@ -8,7 +8,7 @@ public class EnemyCtrl : MonoBehaviour
 {
     // dùng để quản lý các liên kết, các dữ liệu của enemy
     // khi có thay đổi hoặc lấy dữ liệu các scrip sẽ lấy thông tin từ scrip này
-    public DataBase enemyData;
+    //public DataBase enemyData;
 
     [SerializeField] protected EnemyMovement enemyMovement;
     [SerializeField] protected EnemyAttack enemyAttack;
@@ -62,27 +62,23 @@ public class EnemyCtrl : MonoBehaviour
     }
     protected virtual void LoadComponent()
     {
-        LoadData();
-        LoadEnemyData();
+       
         LoadPlayer();
         LoadScripts();
     }
-    protected virtual void LoadData()
-    {
-        if (enemyData != null) return;
-        enemyData = Resources.Load<DataBase>("DataBase");
-    }
+    
     protected virtual void LoadPlayer()
     {
         player = GameObject.Find("Player").transform;
     }
-    protected virtual void LoadEnemyData()
+    public virtual void LoadData(EnemyData enemyData)
     {
-        maxHP = enemyData.listEnemyData[enemyID].maxHp;
-        damage = enemyData.listEnemyData[enemyID].damage;
-        speed = enemyData.listEnemyData[enemyID].speed;
-        timeAttack = enemyData.listEnemyData[enemyID].timeAttack;
-        attackRange = enemyData.listEnemyData[enemyID].attackRange;
+        maxHP = enemyData.maxHp;
+        damage = enemyData.damage;
+        speed = enemyData.speed;
+        timeAttack = enemyData.timeAttack;
+        attackRange = enemyData.attackRange;
+        enemyID = enemyData.enemyID;
     }
 
     protected virtual void LoadScripts()

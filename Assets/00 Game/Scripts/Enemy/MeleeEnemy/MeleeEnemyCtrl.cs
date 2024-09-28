@@ -20,12 +20,5 @@ public class MeleeEnemyCtrl : EnemyCtrl
         meleeEnemySendDamage = transform.GetComponentInChildren<MeleeEnemySendDamage>();
     }
 
-    protected virtual void Attack()
-    {
-        
-        if (player != null && meleeEnemySendDamage!=null)
-        {
-            meleeEnemySendDamage.SendDamage(player);   
-        }
-    }
+    
 }
