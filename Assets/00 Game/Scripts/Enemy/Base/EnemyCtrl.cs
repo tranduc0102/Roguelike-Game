@@ -1,9 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyCtrl : ComponentBehavior
+public class EnemyCtrl : MonoBehaviour
 {
     // dùng để quản lý các liên kết, các dữ liệu của enemy
     // khi có thay đổi hoặc lấy dữ liệu các scrip sẽ lấy thông tin từ scrip này
@@ -53,14 +54,19 @@ public class EnemyCtrl : ComponentBehavior
     public EnemyMovement EnemyMovement => enemyMovement;
 
     public EnemyAttack EnemyAttack => enemyAttack;
-    protected override void LoadComponent()
+   
+
+    protected virtual void OnEnable()
+    {
+        LoadComponent();
+    }
+    protected virtual void LoadComponent()
     {
         LoadData();
         LoadEnemyData();
         LoadPlayer();
         LoadScripts();
     }
-
     protected virtual void LoadData()
     {
         if (enemyData != null) return;

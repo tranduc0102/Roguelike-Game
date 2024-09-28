@@ -19,6 +19,7 @@ public class EnemyStateManager : ComponentBehavior
     protected override void LoadComponent()
     {
         LoadCtrl();
+        LoadEnemyHide();
         enemyState = EnemyState.Hide;
     }
 
@@ -35,6 +36,7 @@ public class EnemyStateManager : ComponentBehavior
     }
     protected virtual void ChangeState()
     {
+        
         float dis = Vector3.Distance(transform.position, enemyCtrl.Player.transform.position);
         if (dis <= enemyCtrl.AttackRange) enemyState = EnemyState.Attack;
         else enemyState = EnemyState.Movement;

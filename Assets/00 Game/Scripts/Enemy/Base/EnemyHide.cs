@@ -50,7 +50,7 @@ public class EnemyHide : ComponentBehavior
     }
     private void OnActive() // Quái Xuất hiện
     {
-        IsActive = false;
+        IsActive = true;
         objActive.SetActive(true);
         objHide.SetActive(false);
         _collider2D.enabled = true;

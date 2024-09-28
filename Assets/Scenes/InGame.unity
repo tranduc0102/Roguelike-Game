@@ -134,7 +134,6 @@ GameObject:
   - component: {fileID: 81007125}
   - component: {fileID: 81007127}
   - component: {fileID: 81007128}
-  - component: {fileID: 81007129}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -225,21 +224,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.072146, y: 0}
   m_Size: {x: 0.4365121, y: 1}
   m_Direction: 0
---- !u!114 &81007129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 81007123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4639afa49ebcad54cb66884d5252b02a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
-  maxHp: 0
-  curHp: 0
 --- !u!1 &88918977
 GameObject:
   m_ObjectHideFlags: 0
@@ -992,7 +976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &753803587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1121,7 +1105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1387823413
 Transform:
   m_ObjectHideFlags: 0
@@ -1342,6 +1326,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Melee Weapon
       objectReference: {fileID: 0}
+    - target: {fileID: 6225088261435104037, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8897283880131047157, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
     m_RemovedGameObjects: []
@@ -1484,7 +1472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4677979924517785911, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6007055728451596010, guid: 13fd4ae1a40fb5241b5d6b81e62750a6, type: 3}
       propertyPath: m_LocalPosition.x
