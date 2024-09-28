@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -16,7 +13,7 @@ public abstract class BaseEnemy : MonoBehaviour
     [SerializeField] private GameObject objHide;
     [SerializeField] private GameObject objActive;
     [SerializeField] private Collider2D _collider2D;
-    [SerializeField] protected enum EnemyState
+    protected enum EnemyState
     {
         Hide,
         Movement,
@@ -49,13 +46,11 @@ public abstract class BaseEnemy : MonoBehaviour
     protected virtual void Movement()
     {
         Vector3 direction = (player.transform.position - transform.position).normalized;
-        transform.Translate(direction * Time.deltaTime * speed);
+        transform.Translate(direction * (Time.deltaTime * speed));
     }
 
     protected virtual void Attack()
-    {
-        
-    }
+    {}
 
     protected virtual void UpdateLogicAttack()
     {
