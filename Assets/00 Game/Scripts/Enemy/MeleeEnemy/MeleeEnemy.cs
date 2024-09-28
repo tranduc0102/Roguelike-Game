@@ -15,7 +15,7 @@ public class MeleeEnemy : BaseEnemy
         speed = data.speed;
         attackRange = data.attackRange;
         timeAttack = data.timeAttack;
-       
+        LoadSendDamage();
     }
 
     protected virtual void LoadSendDamage()
@@ -27,7 +27,9 @@ public class MeleeEnemy : BaseEnemy
     protected override void Attack()
     {
         base.Attack();
-        
-        meleeEnemySendDamage.SendDamage(player);
+        if (player != null && meleeEnemySendDamage!=null)
+        {
+            meleeEnemySendDamage.SendDamage(player);   
+        }
     }
 }

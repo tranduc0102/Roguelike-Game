@@ -9,4 +9,9 @@ public class EnemyDamageReceiver : DamageReceiver
     {
         maxHp = data.listEnemyData[enemyIndex].maxHp;
     }
+
+    protected override void OnDead()
+    {
+        base.OnDead();
+    }
 }

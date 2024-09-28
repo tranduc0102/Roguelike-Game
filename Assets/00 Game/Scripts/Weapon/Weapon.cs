@@ -20,7 +20,9 @@ public class Weapon : MonoBehaviour
     protected List<BaseEnemy> enemyDamaged;
     protected float timeDelay;
     private Animator animator;
+    
 
+    
     protected virtual void OnEnable()
     {
         Load();
@@ -31,7 +33,10 @@ public class Weapon : MonoBehaviour
         animator = GetComponent<Animator>();
         enemyDamaged = new List<BaseEnemy>();
         layerEnemy = LayerMask.GetMask("Enemy");
-        hitdetection = GetComponent<Transform>().GetChild(0).GetChild(1);
+        if (transform.GetChild(0)!= null)
+        {
+            hitdetection = transform.GetChild(0).GetChild(1);
+        }
     }
 
 
@@ -60,10 +65,6 @@ public class Weapon : MonoBehaviour
             targetPoint = (closeEnemy.transform.position - transform.position).normalized;
             CheckDelayAttack(); 
         }
-        else
-        {
-            StopAttack();
-        }
         transform.up = Vector3.Lerp(transform.up, targetPoint, Time.deltaTime*aimLeft);
         UpdateTime();
     }
@@ -90,7 +91,7 @@ public class Weapon : MonoBehaviour
     }
     protected virtual void Attacking()
     {
-        ScanEnemy();
+        AttackEnemy();
     }
     protected virtual void StopAttack()
     {
@@ -98,21 +99,8 @@ public class Weapon : MonoBehaviour
         enemyDamaged.Clear();
     }
 
-    protected virtual void ScanEnemy()
+    protected virtual void AttackEnemy()
     {
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(hitdetection.position, radiusHit, layerEnemy);
-        foreach (var enemy in enemies)
-        {
-            if (!enemyDamaged.Contains(enemy.GetComponent<BaseEnemy>()))
-            {
-                enemyDamaged.Add(enemy.GetComponent<BaseEnemy>());
-            }
-        }
-
-        if (enemies.Length < 1)
-        {
-            StopAttack();
-        }
     }
 
     protected virtual BaseEnemy GetClosestEnemy()
@@ -149,9 +137,11 @@ public class Weapon : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position,attackRange);
-        
+        Gizmos.DrawWireSphere(transform.position,attackRange); 
         Gizmos.color = Color.red;
-        //Gizmos.DrawWireSphere(hitdetection.position,radiusHit);
+        if (hitdetection != null)
+        {
+            Gizmos.DrawWireSphere(hitdetection.position, radiusHit);
+        }
     }
 }

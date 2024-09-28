@@ -1329,6 +1329,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5434669698206319775, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
+      propertyPath: attackDelay
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6225088261435104037, guid: 5f4ead8a4c68c7448b926b14a73c5946, type: 3}
       propertyPath: m_Name
       value: Melee Weapon
