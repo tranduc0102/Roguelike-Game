@@ -32,7 +32,7 @@ public class EnemyDespawner : ComponentBehavior
 
     public virtual void Despawning()
     {
-        PoolingManager.Despawn(transform.parent.gameObject);
+        Destroy(transform.parent.gameObject);
         AfterDespawn();
     }
 

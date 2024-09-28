@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1164114179967782502}
   - component: {fileID: 7901736556553521639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 4645817349031614136}
   - component: {fileID: 3984332854423568323}
   - component: {fileID: 915512757645724856}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DamageReceiver
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1411904808979634778}
   - component: {fileID: 6819753354850403020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Despawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,7 +197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5695370372069501560}
   - component: {fileID: 7590119867827376000}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   - component: {fileID: 4438399266800250773}
   - component: {fileID: 6713349878478303069}
   - component: {fileID: 4080181672120758301}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyCtrl: {fileID: 9091041831213826966}
-  enemyHide: {fileID: 0}
+  enemyHide: {fileID: 4080181672120758301}
   enemyState: 0
 --- !u!61 &6713349878478303069
 BoxCollider2D:
@@ -342,7 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766769b9d2f332d419ab6e306a17333a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeHide: 0
   objHide: {fileID: 8652349152783576942}
   objActive: {fileID: 8469256805885097078}
   _collider2D: {fileID: 6713349878478303069}
@@ -357,7 +356,8 @@ GameObject:
   m_Component:
   - component: {fileID: 701084427126350247}
   - component: {fileID: 9091041831213826966}
-  m_Layer: 0
+  - component: {fileID: 1557879558588159810}
+  m_Layer: 6
   m_Name: MeleeEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,16 +396,61 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64b2cdaf8bc739b4886216e02d96c5c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyMovement: {fileID: 7590119867827376000}
-  enemyAttack: {fileID: 7901736556553521639}
+  enemyMovement: {fileID: 0}
+  enemyAttack: {fileID: 0}
   enemyDespawner: {fileID: 0}
   player: {fileID: 0}
   enemyID: 0
-  maxHP: 30
-  damage: 1
-  speed: 2
-  timeAttack: 1
-  attackRange: 2
+  maxHP: 0
+  damage: 0
+  speed: 0
+  timeAttack: 0
+  attackRange: 0
+--- !u!61 &1557879558588159810
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6086850118510965019}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &6630379073573743099
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8599145721666894341}
   - component: {fileID: 9021279121706582012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DamageSender
   m_TagString: Untagged
   m_Icon: {fileID: 0}

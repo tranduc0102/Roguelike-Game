@@ -11,6 +11,7 @@ public class Weapon : MonoBehaviour
     [Header("Setting")] 
     [SerializeField] protected float attackRange = 2.5f;
     [SerializeField] protected LayerMask layerEnemy;
+    [SerializeField] protected float damagePlayer;
     
     [Header("Attack")] 
     [SerializeField] protected float damage;
@@ -30,13 +31,17 @@ public class Weapon : MonoBehaviour
 
     protected virtual void Load()
     {
-        animator = GetComponent<Animator>();
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();   
+        }
         enemyDamaged = new List<EnemyCtrl>();
         layerEnemy = LayerMask.GetMask("Enemy");
         if (transform.GetChild(0)!= null)
         {
             hitdetection = transform.GetChild(0).GetChild(1);
         }
+        damagePlayer = transform.parent.GetComponent<PlayerCtrl>().Damage;
     }
 
 
@@ -124,7 +129,6 @@ public class Weapon : MonoBehaviour
                 }
             }
         }
-
         return enemy;
     }
 

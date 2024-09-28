@@ -5,12 +5,12 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    private BasePlayer player;
-    private void Start()
+    private PlayerCtrl player;
+    private void OnEnable()
     {
         
-        player = GameObject.Find("Player").transform.GetChild(0).GetComponent<BasePlayer>();
+        player = GameObject.Find("Player").GetComponent<PlayerCtrl>();
         if (player == null) return;
-        player.Init(LevelManager.Instance.dataBase.listPlayerData[0]);
+        player.LoadData(WaveManager.Instance.dataBase.listPlayerData[0]);
     }
 }

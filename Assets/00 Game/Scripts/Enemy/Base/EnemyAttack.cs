@@ -22,7 +22,7 @@ public class EnemyAttack : ComponentBehavior
 
     protected virtual void LoadData()
     {
-        timeAttack = 0.2f;
+        timeAttack = enemyCtrl.TimeAttack;
         coolDown = 0;
     }
     protected virtual void Attacking()

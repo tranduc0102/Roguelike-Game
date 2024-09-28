@@ -17,23 +17,20 @@ MonoBehaviour:
     listMiniWaveData:
     - name: Wave 1.1
       spawnCooldown: 1
-      listEnemiesID: 00000000
-    - name: Wave 1.2
+      listEnemiesID: 0100000001000000
+    - name: Wave 1.1
       spawnCooldown: 1
-      listEnemiesID: 01000000
-    - name: Wave 1.3
+      listEnemiesID: 000000000000000000000000
+    - name: Wave 1.1
       spawnCooldown: 1
-      listEnemiesID: 00000000
-    - name: Wave 1.4
+      listEnemiesID: 010000000000000000000000
+    - name: Wave 1.1
       spawnCooldown: 1
-      listEnemiesID: 01000000
-    - name: Wave 1.5
-      spawnCooldown: 1
-      listEnemiesID: 00000000
-    TimeWave: 30
+      listEnemiesID: 000000000000000000000000
+    TimeWave: 40
   - name: Wave 2
     listMiniWaveData:
     - name: wave 2.1
       spawnCooldown: 1
       listEnemiesID: 00000000
-    TimeWave: 30
+    TimeWave: 60

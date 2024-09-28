@@ -55,6 +55,11 @@ public class EnemyCtrl : MonoBehaviour
         set => attackRange = value;
     }
 
+    public float TimeAttack
+    {
+        get => timeAttack;
+    }
+
     public EnemyMovement EnemyMovement => enemyMovement;
 
     public EnemyAttack EnemyAttack => enemyAttack;
@@ -73,7 +78,7 @@ public class EnemyCtrl : MonoBehaviour
     
     protected virtual void LoadPlayer()
     {
-        player = GameObject.Find("Player").transform;
+        player = GameObject.Find("Player").transform.GetComponentInChildren<PlayerDamageReceiver>().transform;
     }
     public virtual void LoadData(EnemyData enemyData)
     {

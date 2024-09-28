@@ -7,11 +7,13 @@ public class PlayerSendDamage : DamageSender
     [SerializeField] protected PlayerCtrl playerCtrl;
     protected override void LoadCtrl()
     {
-        playerCtrl = transform.GetComponent<PlayerCtrl>();
+        if (playerCtrl == null)
+        {
+            playerCtrl = transform.GetComponent<PlayerCtrl>();   
+        }
     }
 
     protected override void LoadData()
     {
-        damage = playerCtrl.data.listPlayerData[playerCtrl.playerIndex].basicDamage;
     }
 }

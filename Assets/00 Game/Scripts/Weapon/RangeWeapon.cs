@@ -43,6 +43,7 @@ public class RangeWeapon : Weapon
         {
             Bullet bullet = PoolingManager.Spawn(prefabBullet, hitdetection.position, quaternion.identity);
             bullet.Init(closeEnemy.transform.position,speedAttack,"Enemy");
+            bullet.transform.GetComponent<PlayerBulletDamageSender>().Damage = transform.parent.GetComponent<PlayerCtrl>().Damage;
             timeDelay = 0f;
         }
     }

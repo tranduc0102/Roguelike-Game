@@ -1,10 +1,17 @@
 using UnityEngine;
 
-public class PlayerMovement :BasePlayer
-{
-   private float horizontal;
-   private float vertical;
-   protected void FixedUpdate()
+public class PlayerMovement : MonoBehaviour
+{  
+    private float speed; 
+    private float horizontal; 
+    private float vertical;
+
+    private void OnEnable()
+    {
+        speed = transform.parent.GetComponent<PlayerCtrl>().Speed;
+    }
+
+    protected void FixedUpdate()
    {
       this.GetInput();
       this.Moving();
@@ -20,6 +27,6 @@ public class PlayerMovement :BasePlayer
    {
        Vector3 direction = new(this.horizontal, this.vertical, 0);
        direction.Normalize();
-       transform.parent.position += direction * speed * Time.fixedDeltaTime;
+       transform.parent.position += direction * (speed * Time.fixedDeltaTime);
    }
 }

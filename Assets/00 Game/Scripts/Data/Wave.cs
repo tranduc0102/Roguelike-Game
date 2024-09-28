@@ -12,8 +12,15 @@ public class Wave : MonoBehaviour
     protected int time;
     protected int timeWave;
 
+    public int TimeWave
+    {
+        get => timeWave;
+    }
+
     public void InitWave(WaveData data)
     {
+        listMiniWavesData.Clear();
+        listMiniWaves.Clear();
         waveData = data;
         listMiniWavesData = data.listMiniWaveData;
         timeWave = data.TimeWave;
@@ -22,6 +29,8 @@ public class Wave : MonoBehaviour
 
     public void CreateMiniWaves()
     {
+        idMiniWave = 0; // Reset lại idMiniWave
+        time = 0;
         StartCoroutine(SpawnMiniWaves());
     }
 

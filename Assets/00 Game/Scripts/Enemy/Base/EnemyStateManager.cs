@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStateManager : ComponentBehavior
@@ -18,21 +15,29 @@ public class EnemyStateManager : ComponentBehavior
 
     protected override void LoadComponent()
     {
+        enemyState = EnemyState.Hide;
         LoadCtrl();
         LoadEnemyHide();
-        enemyState = EnemyState.Hide;
     }
 
     protected virtual void LoadCtrl()
     {
-        if (enemyCtrl != null) return;
-        enemyCtrl = transform.parent.GetComponent<EnemyCtrl>();
+        if (enemyCtrl == null)
+        {
+            enemyCtrl = transform.parent.GetComponent<EnemyCtrl>();   
+        }
     }
 
     protected virtual void LoadEnemyHide()
     {
-        if(enemyHide != null) return;
-        enemyHide = transform.GetComponent<EnemyHide>();
+        if (enemyHide != null)
+        {
+            enemyHide.HideEnemy();
+        }
+        else
+        {
+            enemyHide = transform.GetComponent<EnemyHide>();   
+        }
     }
     protected virtual void ChangeState()
     {
@@ -46,7 +51,6 @@ public class EnemyStateManager : ComponentBehavior
     {
         if(enemyHide.IsActive) ChangeState();
         if(enemyState == EnemyState.Movement) enemyCtrl.EnemyMovement.Movement();
-        else if(enemyState == EnemyState.Hide) enemyHide.HideEnemy();
-        else enemyCtrl.EnemyAttack.OnAttack();
+        else if(enemyState == EnemyState.Attack) enemyCtrl.EnemyAttack.OnAttack();
     }
 }

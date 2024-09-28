@@ -1,15 +1,12 @@
-
-
 using UnityEngine;
 using DG.Tweening;
+
 public class EnemyHide : ComponentBehavior
 {
-   
     [SerializeField] private GameObject objHide;
     [SerializeField] private GameObject objActive;
     [SerializeField] private Collider2D _collider2D;
     public bool IsActive;
-
     protected void OnEnable()
     {
         IsActive = false;
@@ -24,36 +21,37 @@ public class EnemyHide : ComponentBehavior
         objHide.SetActive(true);
         objActive.SetActive(false);
         _collider2D.enabled = false;
-       
+        transform.parent.GetComponent<Collider2D>().enabled = false;
     }
 
-    public void HideEnemy() // Hàm này để ẩn quái thông báo cho người chơi vị trí quái sẽ Spawn
+    public void HideEnemy()
     {
         var originalScale = objHide.transform.localScale;
-        var toScale = originalScale*1.5f;
-       
-        OnScale(objHide.transform,originalScale,toScale);
+        var toScale = originalScale * 1.5f;
+        OnScale(objHide.transform, originalScale, toScale);
     }
-    private void OnScale(Transform obj,Vector3 originalScale,Vector3 toScale)
+
+    private void OnScale(Transform obj, Vector3 originalScale, Vector3 toScale)
     {
-        // Hàm này dùng để chỉnh scale của gameObject Hide
         obj.DOScale(toScale, 0.5f)
             .SetEase(Ease.InOutSine)
-            .OnComplete(() => {
+            .OnComplete(() =>
+            {
                 obj.DOScale(originalScale, 0.25f)
                     .SetEase(Ease.OutBounce)
                     .SetDelay(0.1f)
-                    .OnComplete(()=> OnScale(obj, originalScale, toScale)); 
+                    .OnComplete(() => OnScale(obj, originalScale, toScale));
             })
-            .SetLoops(5)
-            .OnComplete(()=>OnActive());
+            .SetLoops(4)
+            .OnComplete(() => OnActive());
     }
-    private void OnActive() // Quái Xuất hiện
+
+    private void OnActive()
     {
         IsActive = true;
         objActive.SetActive(true);
         objHide.SetActive(false);
         _collider2D.enabled = true;
-        
+        transform.parent.GetComponent<Collider2D>().enabled = true;
     }
 }

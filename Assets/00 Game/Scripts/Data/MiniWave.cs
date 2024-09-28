@@ -23,18 +23,20 @@ public class MiniWave : MonoBehaviour
         set => wave = value;
     }
     
-    public void Init(MiniWaveData data)
+    public void Init(MiniWaveData data,Transform parent)
     {
+        listEnemyDatas.Clear();
+        listEnemies.Clear();
         miniWaveData = data;
         spawnCoolDown = data.spawnCooldown;
         var listEnemiesID = data.listEnemiesID;
         for (int i = 0; i < listEnemiesID.Count; i++)
         {
-            var enemy = LevelManager.Instance.dataBase.listEnemyData[listEnemiesID[i]];
+            var enemy = WaveManager.Instance.dataBase.listEnemyData[listEnemiesID[i]];
             listEnemyDatas.Add(enemy);
         }
         
-        transform.SetParent(LevelManager.Instance.spawnersTrf);
+        transform.SetParent(parent);
 
         StartCoroutine(SpawnerMiniWave());
     }
@@ -52,9 +54,9 @@ public class MiniWave : MonoBehaviour
     protected virtual void SpawnEnermy(int ID)
     {
        
-        var enemy = PoolingManager.Spawn(LevelManager.Instance.dataBase.listEnemyData[miniWaveData.listEnemiesID[ID]].enemyPrefab);
+        var enemy = PoolingManager.Spawn(WaveManager.Instance.dataBase.listEnemyData[miniWaveData.listEnemiesID[ID]].enemyPrefab);
         // truy cập vào levelManager rồi truy cập vào databse lấy listEnemydata
-        // sau đó truy cập vào miniData đã được Init ở scipt Wave sau đó truy cập đến List ID quái 
+        // sau đó truy cập vào miniwaveData đã được Init ở scipt Wave sau đó truy cập đến List ID quái 
         // rồi từ cái ID đó ta sẽ truyền vào listEnemyData[ID].enemyPrefab để sinh ra Enemy Prefab với ID tương ứng
         
         enemy.name = listEnemyDatas[ID].enemyName + " " + (ID + 1);

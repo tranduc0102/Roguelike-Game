@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float speed = 5f;
-    public Vector3 enemy;
-    public Rigidbody2D rb;
-    public Vector3 toward;
+    protected float speed = 5f;
+    protected Vector3 enemy;
+    protected Rigidbody2D rb;
+    protected Vector3 toward;
     protected string nameTag;
 
+    
     public string NameTag
     {
         get => nameTag;

@@ -17,8 +17,4 @@ public class RangedEnemyCtrl : EnemyCtrl
         base.LoadComponent();
         bulletSpeed = 7f;
     }
-
-   
-
-   
 }

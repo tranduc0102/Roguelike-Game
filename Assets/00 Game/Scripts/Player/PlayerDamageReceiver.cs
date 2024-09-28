@@ -7,16 +7,16 @@ public class PlayerDamageReceiver : DamageReceiver
     [SerializeField] protected PlayerCtrl playerCtrl;
     protected override void LoadCtrl()
     {
-        playerCtrl = transform.GetComponent<PlayerCtrl>();
+        playerCtrl = transform.parent.GetComponent<PlayerCtrl>();
     }
 
     protected override void LoadData()
     {
-        maxHp = playerCtrl.data.listPlayerData[playerCtrl.playerIndex].basicHp;
+        maxHp = playerCtrl.MaxHp;
     }
 
     protected override void OnDead()
     {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
     }
 }

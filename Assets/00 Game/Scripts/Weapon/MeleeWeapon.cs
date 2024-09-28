@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MeleeWeapon : Weapon
@@ -19,13 +17,17 @@ public class MeleeWeapon : Weapon
             if (!enemyDamaged.Contains(enemy.GetComponent<EnemyCtrl>()))
             {
                 enemyDamaged.Add(enemy.GetComponent<EnemyCtrl>());
-                DoMeleeAttack(enemy.transform);
+                if (enemy.GetComponentInChildren<EnemyDamageReceiver>() != null)
+                {
+                    DoMeleeAttack(enemy.GetComponentInChildren<EnemyDamageReceiver>().transform);
+                }
             }
         }
     }
 
     protected virtual void DoMeleeAttack(Transform enemy)
     {
+        playerSendDamage.Damage = damagePlayer + damage;
         playerSendDamage.SendDamage(enemy);
     }
 }

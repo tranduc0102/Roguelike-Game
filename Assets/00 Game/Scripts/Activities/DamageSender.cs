@@ -6,6 +6,11 @@ public abstract class DamageSender : ComponentBehavior
 {
     [SerializeField] protected float damage;
 
+    public float Damage
+    {
+        set => damage = value;
+    }
+
 
     protected override void LoadComponent()
     {
