@@ -1,10 +1,10 @@
 
-using System;
+
 using UnityEngine;
 using DG.Tweening;
 public class EnemyHide : ComponentBehavior
 {
-    [SerializeField] private float timeHide;
+   
     [SerializeField] private GameObject objHide;
     [SerializeField] private GameObject objActive;
     [SerializeField] private Collider2D _collider2D;

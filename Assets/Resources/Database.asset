@@ -38,4 +38,4 @@ MonoBehaviour:
     speed: 3
     timeAttack: 1
     attackRange: 7
-    enemyPrefab: {fileID: 0}
+    enemyPrefab: {fileID: 8537984620292427992, guid: ca499ee699010314399c12be0c1082c6, type: 3}
