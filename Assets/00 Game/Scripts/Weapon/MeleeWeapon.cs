@@ -5,34 +5,25 @@ using UnityEngine;
 public class MeleeWeapon : Weapon
 {
     [SerializeField] protected PlayerSendDamage playerSendDamage;
-    protected override void OnEnable()
+    protected override void Load()
     {
-        base.OnEnable();
-        attackDelay = 2f;
+        base.Load();
         playerSendDamage = transform.GetComponent<PlayerSendDamage>();
     }
 
-    protected override void AutoAim()
+    protected override void AttackEnemy()
     {
-        BaseEnemy closeEnemy = GetClosestEnemy();
-        Vector2 targetPoint = Vector2.up;
-        if (closeEnemy != null)
+        Collider2D[] enemies = Physics2D.OverlapCircleAll(hitdetection.position, radiusHit, layerEnemy);
+        foreach (var enemy in enemies)
         {
-            targetPoint = (closeEnemy.transform.position - transform.position).normalized;
-            if(CanDoAttack()) DoMeleeAttack(closeEnemy.transform);
+            if (!enemyDamaged.Contains(enemy.GetComponent<BaseEnemy>()))
+            {
+                enemyDamaged.Add(enemy.GetComponent<BaseEnemy>());
+                DoMeleeAttack(enemy.transform);
+            }
         }
-        else
-        {
-            StopAttack();
-        }
-        transform.up = Vector3.Lerp(transform.up, targetPoint, Time.deltaTime*aimLeft);
-        UpdateTime();
     }
 
-    protected virtual bool CanDoAttack()
-    {
-        return timeDelay > attackDelay;
-    }
     protected virtual void DoMeleeAttack(Transform enemy)
     {
         playerSendDamage.SendDamage(enemy);

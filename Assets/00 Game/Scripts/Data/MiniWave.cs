@@ -8,7 +8,7 @@ public class MiniWave : MonoBehaviour
     protected Wave wave;
     protected MiniWaveData miniWaveData;
     protected List<EnemyData> listEnemyDatas = new List<EnemyData>();
-    protected List<BaseEnemy> listEnemies = new List<BaseEnemy>();
+    protected List<EnemyCtrl> listEnemies = new List<EnemyCtrl>();
     protected float spawnCoolDown;
 
     public int MiniWaveID
@@ -56,7 +56,7 @@ public class MiniWave : MonoBehaviour
         // rồi từ cái ID đó ta sẽ truyền vào listEnemyData[ID].enemyPrefab để sinh ra Enemy Prefab với ID tương ứng
         enemy.name = listEnemyDatas[ID].enemyName + " " + (ID + 1);
         enemy.transform.position = new Vector3(Random.Range(-10,10),Random.Range(-10,10));
-        enemy.LoadData(listEnemyDatas[ID]);
+        //enemy.LoadData(listEnemyDatas[ID]);
         listEnemies.Add(enemy);
         enemy.transform.SetParent(transform);
     }

@@ -8,11 +8,11 @@ public class MeleeEnemySendDamage : DamageSender
     
     protected override void LoadCtrl()
     {
-        enemyCtrl = transform.GetComponent<EnemyCtrl>();
+        enemyCtrl = transform.parent.parent.GetComponent<EnemyCtrl>();
     }
 
     protected override void LoadData()
     {
-        damage = enemyCtrl.enemyData.listEnemyData[enemyCtrl.enemyIndex].damage;
+        damage = enemyCtrl.Damage;
     }
 }

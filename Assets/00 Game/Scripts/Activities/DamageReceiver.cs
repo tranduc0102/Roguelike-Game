@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class DamageReceiver : MonoBehaviour
+public abstract class DamageReceiver : ComponentBehavior
 {
    
     [SerializeField] protected float maxHp;
     [SerializeField] protected float curHp;
 
-    protected virtual void OnEnable()
+   
+
+    protected override void LoadComponent()
     {
         LoadCtrl();
         LoadData();

@@ -29,7 +29,7 @@ public class EnemyData
     public float speed = 2f;
     public float timeAttack;
     public float attackRange;
-    public BaseEnemy enemyPrefab;
+    public EnemyCtrl enemyPrefab;
 }
 [Serializable]
 public class PrefabData 

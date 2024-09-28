@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class DamageSender : MonoBehaviour
+public abstract class DamageSender : ComponentBehavior
 {
     [SerializeField] protected float damage;
 
-    
 
-    protected virtual void OnEnable()
+    protected override void LoadComponent()
     {
         LoadCtrl();
         LoadData();
     }
+
+   
 
     protected abstract void LoadCtrl();
     protected abstract void LoadData();
