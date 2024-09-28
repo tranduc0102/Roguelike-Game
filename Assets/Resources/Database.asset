@@ -30,7 +30,7 @@ MonoBehaviour:
     speed: 2
     timeAttack: 1
     attackRange: 2
-    enemyPrefab: {fileID: 4584132461024532899, guid: 4b58aa99fdd9c5542ae2cc3ce72786e8, type: 3}
+    enemyPrefab: {fileID: 9091041831213826966, guid: 4b58aa99fdd9c5542ae2cc3ce72786e8, type: 3}
   - enemyName: Ranged Basic Enemy
     enemyID: 1
     maxHp: 40
@@ -38,4 +38,4 @@ MonoBehaviour:
     speed: 3
     timeAttack: 1
     attackRange: 7
-    enemyPrefab: {fileID: 4977799922060014217, guid: ca499ee699010314399c12be0c1082c6, type: 3}
+    enemyPrefab: {fileID: 8537984620292427992, guid: ca499ee699010314399c12be0c1082c6, type: 3}

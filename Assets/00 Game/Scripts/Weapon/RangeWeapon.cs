@@ -5,11 +5,13 @@ using UnityEngine;
 public class RangeWeapon : Weapon
 {
     [SerializeField] protected Bullet prefabBullet;
+    
     protected override void Load()
     {
-        enemyDamaged = new List<BaseEnemy>();
+        enemyDamaged = new List<EnemyCtrl>();
         layerEnemy = LayerMask.GetMask("Enemy");
         hitdetection = GetComponent<Transform>().GetChild(0).GetChild(1);
+       
     }
 
     protected override void StartAttack()
@@ -20,7 +22,7 @@ public class RangeWeapon : Weapon
 
     protected override void AutoAim()
     {
-        BaseEnemy closeEnemy = GetClosestEnemy();
+        EnemyCtrl closeEnemy = GetClosestEnemy();
         Vector2 targetPoint = Vector2.up;
         if (closeEnemy != null)
         {
@@ -35,7 +37,7 @@ public class RangeWeapon : Weapon
         UpdateTime();
     }
 
-    protected virtual void Shoot(BaseEnemy closeEnemy)
+    protected virtual void Shoot(EnemyCtrl closeEnemy)
     {
         if (timeDelay > attackDelay)
         {

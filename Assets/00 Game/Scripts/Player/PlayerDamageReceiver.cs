@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class PlayerDamageReceiver : DamageReceiver
 {
-    
+    [SerializeField] protected PlayerCtrl playerCtrl;
+    protected override void LoadCtrl()
+    {
+        playerCtrl = transform.GetComponent<PlayerCtrl>();
+    }
+
     protected override void LoadData()
     {
-        maxHp = data.listPlayerData[0].basicHp;
+        maxHp = playerCtrl.data.listPlayerData[playerCtrl.playerIndex].basicHp;
     }
 
     protected override void OnDead()
