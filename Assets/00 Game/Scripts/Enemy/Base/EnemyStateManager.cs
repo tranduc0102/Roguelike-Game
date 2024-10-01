@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EnemyStateManager : ComponentBehavior
@@ -12,6 +13,13 @@ public class EnemyStateManager : ComponentBehavior
     }
 
     [SerializeField] protected EnemyState enemyState;
+
+    private void OnEnable()
+    {
+        enemyState = EnemyState.Hide;
+        LoadCtrl();
+        LoadEnemyHide();
+    }
 
     protected override void LoadComponent()
     {

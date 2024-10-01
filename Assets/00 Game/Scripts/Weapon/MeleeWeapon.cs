@@ -27,7 +27,7 @@ public class MeleeWeapon : Weapon
 
     protected virtual void DoMeleeAttack(Transform enemy)
     {
-        playerSendDamage.Damage = damagePlayer + damage;
+        playerSendDamage.Damage = damage;
         playerSendDamage.SendDamage(enemy);
     }
 }

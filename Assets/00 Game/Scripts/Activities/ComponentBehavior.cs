@@ -9,7 +9,6 @@ public class ComponentBehavior : MonoBehaviour
     {
         LoadComponent();
     }
-
     protected virtual void Start()
     {
         LoadComponent();

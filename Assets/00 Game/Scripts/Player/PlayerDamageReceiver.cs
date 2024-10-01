@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDamageReceiver : DamageReceiver
@@ -13,6 +11,14 @@ public class PlayerDamageReceiver : DamageReceiver
     protected override void LoadData()
     {
         maxHp = playerCtrl.MaxHp;
+        EventDispatcher.Instance.PostEvent(EventID.OnUpdateMaxHealth,maxHp);
+        EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth,curHp);
+    }
+
+    public override void Deduct(float damage)
+    {
+        base.Deduct(damage);
+        EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth,curHp);
     }
 
     protected override void OnDead()

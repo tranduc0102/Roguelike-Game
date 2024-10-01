@@ -37,7 +37,6 @@ public class EnemyAttack : ComponentBehavior
         {
             Attacking();
             coolDown = 0;
-
         }
     }
 }

@@ -24,7 +24,7 @@ public class Weapon : MonoBehaviour
     
 
     
-    protected virtual void OnEnable()
+    protected virtual void Start()
     {
         Load();
     }
@@ -42,6 +42,7 @@ public class Weapon : MonoBehaviour
             hitdetection = transform.GetChild(0).GetChild(1);
         }
         damagePlayer = transform.parent.GetComponent<PlayerCtrl>().Damage;
+        damage = damagePlayer;
     }
 
 

@@ -99,19 +99,25 @@ public class EnemyCtrl : MonoBehaviour
 
     protected virtual void LoadEnemyMovement()
     {
-        if(enemyMovement != null) return;
-        enemyMovement = transform.GetComponentInChildren<EnemyMovement>();
+        if (enemyMovement == null)
+        {
+            enemyMovement = transform.GetComponentInChildren<EnemyMovement>();   
+        }
     }
     protected virtual void LoadEnemyAttack()
     {
-        if (enemyAttack != null) return;
-        enemyAttack = transform.GetComponentInChildren<EnemyAttack>();
+        if (enemyAttack == null)
+        {
+            enemyAttack = transform.GetComponentInChildren<EnemyAttack>();   
+        }
     }
 
     protected virtual void LoadEnemyDespawner()
     {
-        if (enemyDespawner != null) return;
-        enemyDespawner = transform.GetComponentInChildren<EnemyDespawner>();
+        if (enemyDespawner == null)
+        {
+            enemyDespawner = transform.GetComponentInChildren<EnemyDespawner>();   
+        }
     }
 
 }

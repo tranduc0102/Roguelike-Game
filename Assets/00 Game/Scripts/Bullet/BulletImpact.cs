@@ -14,6 +14,9 @@ public class BulletImpact : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.CompareTag(enemyTag)) _damageSender.SendDamage(other.transform);
+        if (other.gameObject.CompareTag(enemyTag))
+        {
+            _damageSender.SendDamage(other.transform);
+        }
     }
 }

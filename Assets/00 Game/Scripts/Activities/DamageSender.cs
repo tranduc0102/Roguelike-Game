@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,7 @@ public abstract class DamageSender : ComponentBehavior
     {
         set => damage = value;
     }
-
-
+    
     protected override void LoadComponent()
     {
         LoadCtrl();

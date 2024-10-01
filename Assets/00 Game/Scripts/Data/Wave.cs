@@ -37,12 +37,12 @@ public class Wave : MonoBehaviour
     IEnumerator SpawnMiniWaves()
     {
         // Tạo ra các miniWave liên tục cứ sau mỗi 10s và nếu thời gian của wave còn dưới 20s thì không spawn miniWave nữa
-        while (time < timeWave)
+        while (time <= timeWave)
         {
-            if (time >= (timeWave - 10)) // Nếu thời gian còn dưới 20s thì không spawn miniWave nữa
+            /*if (time >= (timeWave - 10)) // Nếu thời gian còn dưới 20s thì không spawn miniWave nữa
             {
                 yield break; // Thoát khỏi Coroutine nếu điều kiện thỏa
-            }
+            }*/
 
             if (idMiniWave < listMiniWavesData.Count) // Kiểm tra nếu id không vượt quá số lượng MiniWaveData
             {
@@ -54,7 +54,7 @@ public class Wave : MonoBehaviour
                 idMiniWave = 0;
             }
 
-            yield return new WaitForSeconds(5f); // Chờ 5 giây trước khi spawn MiniWave tiếp theo
+            yield return new WaitForSeconds(3f); // Chờ 3 giây trước khi spawn MiniWave tiếp theo
             time += 5;
         }
     }

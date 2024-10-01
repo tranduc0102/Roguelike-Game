@@ -20,13 +20,16 @@ public class WaveManager : Singleton<WaveManager>
         while (idWave < levelData.listWavesData.Count)
         {
             CreateWave(idWave);
-            yield return new WaitForSeconds(oldWave.TimeWave); // Chờ 60 giây giữa các wave
+            yield return new WaitForSeconds(oldWave.TimeWave); // Chờ giữa các wave
             if (oldWave != null)
             {
                 Destroy(oldWave.gameObject);
-                yield return new WaitForSeconds(2f);
             }
             idWave++;
+            if (idWave >= levelData.listWavesData.Count)
+            {
+                idWave = Random.Range(0, levelData.listWavesData.Count); // tạo vòng lặp Wave random Vô tận khi chạy hết các Wave đúng thứ tự
+            }
         }
     }
 

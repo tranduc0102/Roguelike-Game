@@ -2,5 +2,9 @@
 public enum EventID
 {
     None,
+    OnUpdateMaxHealth,
+    OnUpdateMaxExp,
+    OnUpdateCurrentHealth,
+    OnExp,
     CheckAllEnemyDied,
 }
