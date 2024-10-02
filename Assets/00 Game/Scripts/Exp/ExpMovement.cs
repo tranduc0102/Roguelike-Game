@@ -54,7 +54,7 @@ public class ExpMovement : ComponentBehavior
 
     protected virtual void PlayerGainExp()
     {
-        EventDispatcher.Instance.PostEvent(EventID.OnExp,1f);
+        EventDispatcher.Instance.PostEvent(EventID.OnGainExp,1f);
         PoolingManager.Despawn(transform.gameObject);
     }
 

@@ -21,7 +21,8 @@ public class HealthAndExpBar : MonoBehaviour
         
         RegisterEvent();
         maxExp = 8f;
-        SetMaxExp(maxExp);
+        sliderExp.value = 0;
+        SetMaxExp();
     }
 
     
@@ -29,18 +30,18 @@ public class HealthAndExpBar : MonoBehaviour
     private void RegisterEvent()
     {
         EventDispatcher.Instance.RegisterListener(EventID.OnUpdateMaxHealth,param=>SetMaxHealth((float)param));
-        EventDispatcher.Instance.RegisterListener(EventID.OnUpdateMaxExp,param=>SetMaxExp((float)param));
-        EventDispatcher.Instance.RegisterListener(EventID.OnExp,param=>SetExp((float)param));
+        
+        EventDispatcher.Instance.RegisterListener(EventID.OnGainExp,param=>SetExp((float)param));
         EventDispatcher.Instance.RegisterListener(EventID.OnUpdateCurrentHealth,param=>SetHealth((float)param));
     }
 
-    /*private void OnDisable()
+    private void OnDisable()
     {
         EventDispatcher.Instance.RemoveListener(EventID.OnUpdateCurrentHealth);
-       // EventDispatcher.Instance.RemoveListener(EventID.OnUpdateMaxExp);
+       
         EventDispatcher.Instance.RemoveListener(EventID.OnUpdateMaxHealth);
-        //EventDispatcher.Instance.RemoveListener(EventID.OnExp);
-    }*/
+        EventDispatcher.Instance.RemoveListener(EventID.OnGainExp);
+    }
 
     protected void SetMaxHealth(float maxHP)
     {
@@ -60,10 +61,10 @@ public class HealthAndExpBar : MonoBehaviour
         }
     }
 
-    protected void SetMaxExp(float amount)
+    protected void SetMaxExp()
     {
-        sliderExp.maxValue = amount;
-        sliderExp.value = 0;
+        sliderExp.value %= maxExp;
+        sliderExp.maxValue = maxExp;
     }
 
     protected void SetExp(float amount)
@@ -75,6 +76,8 @@ public class HealthAndExpBar : MonoBehaviour
     protected virtual void UpdateLevel()
     {
         maxExp *= 2;
-        SetMaxExp(maxExp);
+        SetMaxExp();
+        // Post sự kiện
+        EventDispatcher.Instance.PostEvent(EventID.OnLevelUp);
     }
 }

@@ -3,8 +3,8 @@ public enum EventID
 {
     None,
     OnUpdateMaxHealth,
-    OnUpdateMaxExp,
+    OnLevelUp,
     OnUpdateCurrentHealth,
-    OnExp,
+    OnGainExp,
     CheckAllEnemyDied,
 }
