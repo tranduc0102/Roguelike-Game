@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class HealthAndExpBar : MonoBehaviour
     [SerializeField] private Slider sliderHealth;
     [SerializeField] private Slider sliderExp;
     [SerializeField] private TextMeshProUGUI txtHP;
+    [SerializeField] private float maxExp;
 
     private void Awake()
     {
@@ -16,9 +18,19 @@ public class HealthAndExpBar : MonoBehaviour
     }
     private void OnEnable()
     {
+        
+        RegisterEvent();
+        maxExp = 8f;
+        SetMaxExp(maxExp);
+    }
+
+    
+    
+    private void RegisterEvent()
+    {
         EventDispatcher.Instance.RegisterListener(EventID.OnUpdateMaxHealth,param=>SetMaxHealth((float)param));
-        //EventDispatcher.Instance.RegisterListener(EventID.OnUpdateMaxExp,param=>SetMaxExp((float)param));
-        //EventDispatcher.Instance.RegisterListener(EventID.OnExp,param=>SetExp((float)param));
+        EventDispatcher.Instance.RegisterListener(EventID.OnUpdateMaxExp,param=>SetMaxExp((float)param));
+        EventDispatcher.Instance.RegisterListener(EventID.OnExp,param=>SetExp((float)param));
         EventDispatcher.Instance.RegisterListener(EventID.OnUpdateCurrentHealth,param=>SetHealth((float)param));
     }
 
@@ -56,6 +68,13 @@ public class HealthAndExpBar : MonoBehaviour
 
     protected void SetExp(float amount)
     {
-        sliderExp.value = amount;
+        sliderExp.value += amount;
+        if (Math.Abs(sliderExp.value - maxExp) < 0.1f) UpdateLevel();
+    }
+
+    protected virtual void UpdateLevel()
+    {
+        maxExp *= 2;
+        SetMaxExp(maxExp);
     }
 }
