@@ -2,14 +2,14 @@ using System;
 
 using System.Collections.Generic;
 using UnityEngine;
-[CreateAssetMenu (fileName = "LevelUpStatsData ",menuName = "Data/LevelUpStatsData")]
-public class LevelUpStatsData : ScriptableObject
+[CreateAssetMenu (fileName = "OptionStatsData ",menuName = "Data/OptionStatsData")]
+public class OptionStatsData : ScriptableObject
 {
-    public List<LevelUpStatsParam> ListLevelUpStats;
+    public List<OptionStatsParam> ListOptionStats;
 }
 
 [Serializable]
-public class LevelUpStatsParam
+public class OptionStatsParam
 {
     public Sprite image;
     public string name;

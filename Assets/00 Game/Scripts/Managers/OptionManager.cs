@@ -3,9 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelUpManager : ComponentBehavior
+public class OptionManager : ComponentBehavior
 {
+    [SerializeField] protected Transform chooseTrf;
     [SerializeField] protected float curTimeScale;
+    protected override void LoadComponent()
+    {
+        base.LoadComponent();
+        LoadChooseTrf();
+    }
+
+    protected virtual void LoadChooseTrf()
+    {
+        if (chooseTrf!= null) return;
+        chooseTrf = GameObject.Find("Canvas").transform.GetChild(1).Find("OptionChosen").transform;
+    }
+
     protected void OnEnable()
     {
         EventDispatcher.Instance.RegisterListener(EventID.OnLevelUp,param=>DisplayOptions());
@@ -24,6 +37,6 @@ public class LevelUpManager : ComponentBehavior
     protected virtual void DisplayOptions()
     {
         SetNewSpeedGame(0);
-        Debug.Log("Display Option");
+        chooseTrf.gameObject.SetActive(true);
     }
 }
