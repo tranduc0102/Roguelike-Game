@@ -58,6 +58,7 @@ public class HealthAndExpBar : MonoBehaviour
     protected void SetMaxExp()
     {
         sliderExp.value %= maxExp;
+        maxExp *= 2;
         sliderExp.maxValue = maxExp;
     }
 
@@ -69,7 +70,6 @@ public class HealthAndExpBar : MonoBehaviour
 
     protected virtual void UpdateLevel()
     {
-        maxExp *= 2;
         SetMaxExp();
         // Post sự kiện
         EventDispatcher.Instance.PostEvent(EventID.OnLevelUp);

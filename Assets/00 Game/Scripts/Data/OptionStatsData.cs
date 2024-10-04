@@ -22,5 +22,6 @@ public class OptionStatsParam
 public enum StatsType
 {
     Damage,
-    MaxHp
+    MaxHp,
+    Speed
 }

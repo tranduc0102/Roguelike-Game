@@ -9,6 +9,11 @@ public abstract class DamageReceiver : ComponentBehavior
     [SerializeField] protected float maxHp;
     [SerializeField] protected float curHp;
 
+    public float MaxHp
+    {
+        get => maxHp;
+        set => maxHp = value;
+    }
 
     private void OnEnable()
     {

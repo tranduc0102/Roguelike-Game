@@ -13,23 +13,39 @@ public class PlayerCtrl : MonoBehaviour
     [SerializeField] protected PlayerMovement playerMovement;
     [SerializeField] protected PlayerAnimation playerAnimation;
     [SerializeField] protected RuntimeAnimatorController runtimeAnimatorController;
-
+    [SerializeField] protected PlayerDamageReceiver playerDamageReceiver;
+    [SerializeField] protected List<Weapon> listWeapon;
     public float MaxHp
     {
         get => maxHp;
-        set => maxHp = value;
+        set
+        {
+            maxHp = value;
+            playerDamageReceiver.MaxHp = maxHp;
+        }
     }
 
     public float Damage
     {
         get => damage;
-        set => damage = value;
+        set
+        {
+            damage = value;
+            foreach (Weapon wp in listWeapon)
+            {
+                wp.Damage = damage;
+            }
+        }
     }
 
     public float Speed
     {
         get => speed;
-        set => speed = value;
+        set
+        {
+            speed = value;
+            playerMovement.Speed = value;
+        }
     }
 
     public PlayerMovement PlayerMovement => playerMovement;
@@ -50,6 +66,8 @@ public class PlayerCtrl : MonoBehaviour
     {
         LoadPlayerMovement();
         LoadPlayerAnimator();
+        LoadPlayerDamageReceiver();
+        LoadListWeapon();
     }
 
     protected virtual void LoadPlayerMovement()
@@ -60,6 +78,20 @@ public class PlayerCtrl : MonoBehaviour
     protected virtual void LoadPlayerAnimator()
     {
         playerAnimation = transform.GetComponentInChildren<PlayerAnimation>();
+    }
+
+    protected virtual void LoadPlayerDamageReceiver()
+    {
+        playerDamageReceiver = transform.GetComponentInChildren<PlayerDamageReceiver>();
+    }
+
+    protected virtual void LoadListWeapon()
+    {
+        foreach (Transform weapon in transform)
+        {
+            Weapon wp = weapon.GetComponent<Weapon>();
+            if(wp != null) listWeapon.Add(wp);
+        }
     }
 
     public virtual void LoadData(PlayerData data)

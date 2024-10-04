@@ -74,7 +74,7 @@ public class OptionManager : ComponentBehavior
         foreach (OptionCtrl optionCtrl in listOption)
         {
             int id = Random.Range(0, listOption.Count);
-            optionCtrl.Init(data[id].image,data[id].name,data[id].description);
+            optionCtrl.Init(data[id].image,data[id].name,data[id].description,data[id].statsType, data[id].value);
         }
     }
 }

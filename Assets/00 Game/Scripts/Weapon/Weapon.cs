@@ -21,9 +21,13 @@ public class Weapon : MonoBehaviour
     protected List<EnemyCtrl> enemyDamaged;
     protected float timeDelay;
     private Animator animator;
-    
 
-    
+
+    public float Damage
+    {
+        get => damage;
+        set => damage = value;
+    }
     protected virtual void Start()
     {
         Load();

@@ -6,6 +6,11 @@ public class PlayerMovement : MonoBehaviour
     private float horizontal; 
     private float vertical;
 
+    public float Speed
+    {
+        get => speed;
+        set => speed = value;
+    }
     private void OnEnable()
     {
         speed = transform.parent.GetComponent<PlayerCtrl>().Speed;

@@ -40,7 +40,7 @@ public class WaveManager : Singleton<WaveManager>
         wave.WaveID = waveID;
         wave.name = "Wave" + (waveID + 1);
         wave.InitWave(levelData.listWavesData[waveID]);
-        Debug.LogWarning("Wave " + (waveID + 1) + " has been created.");
+        Debug.Log("Wave " + (waveID + 1) + " has been created.");
         oldWave = wave;
     }
 }
