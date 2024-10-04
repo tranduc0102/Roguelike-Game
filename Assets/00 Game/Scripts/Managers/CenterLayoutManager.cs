@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 
@@ -14,7 +15,10 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
     [SerializeField] protected List<OptionStatsParam> data;
     [SerializeField] protected Transform chooseTrf;
     [SerializeField] protected List<OptionCtrl> listOption;
-
+    [Header("Setting")] 
+    [SerializeField] protected Transform settingTrf;
+    [SerializeField] protected Button settingBtn;
+    
     [SerializeField] protected Transform currentLayout;
     public enum CenterLayoutType
     {
@@ -34,11 +38,19 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
             switch (centerLayoutStatus)
             {
                 case CenterLayoutType.None:
-                    if(currentLayout != null) currentLayout.gameObject.SetActive(false);
+                    if (currentLayout != null)
+                    {
+                        currentLayout.gameObject.SetActive(false);
+                        TimeScaleManager.Instance.ResetToInitialSpeed();
+                        currentLayout = null;
+                    }
                     break;
                 case CenterLayoutType.UpgradePlayerStatus:
-                    currentLayout = chooseTrf;
-                    DisplayOptions();
+                    LoadDataForOption();
+                    ChangeCurrentLayout(chooseTrf);
+                    break;
+                case CenterLayoutType.Setting:
+                    ChangeCurrentLayout(settingTrf);
                     break;
             }
         }
@@ -60,6 +72,9 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
         LoadChooseTrf();
         LoadData();
         LoadListOption();
+
+        LoadSettingTrf();
+        LoadSettingBtn();
     }
 
     protected virtual void LoadChooseTrf()
@@ -85,21 +100,41 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
         }
         
     }
+
+    protected virtual void LoadSettingTrf()
+    {
+        if(settingTrf != null) return;
+        settingTrf = GameObject.Find("Canvas").transform.GetChild(1).Find("Setting").transform;
+    }
+
+    protected virtual void LoadSettingBtn()
+    {
+        if (settingBtn != null) return;
+        settingBtn = GameObject.Find("Canvas").transform.Find("Top").Find("Setting Button").GetComponent<Button>();
+    }
     protected void OnEnable()
     {
         EventDispatcher.Instance.RegisterListener(EventID.OnFinishWay, param =>
         {
             CenterLayoutStatus = CenterLayoutType.UpgradePlayerStatus;
         });
+        settingBtn.onClick.AddListener(() =>
+        {
+            CenterLayoutStatus = CenterLayoutType.Setting;
+        });
     }
 
-   
-    protected virtual void DisplayOptions()
+    protected virtual void ChangeCurrentLayout(Transform newLayout)
     {
+        // only 1 current layout allow to exist
+        if (currentLayout != null) return;
+       
+        currentLayout = newLayout;
         TimeScaleManager.Instance.StopGame();
-        LoadDataForOption();
-        chooseTrf.gameObject.SetActive(true);
+        currentLayout.gameObject.SetActive(true);
+        
     }
+   
 
     protected virtual void LoadDataForOption()
     {
@@ -114,4 +149,6 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
             optionCtrl.Init(data[id].image,data[id].name,data[id].description,data[id].statsType, data[id].value);
         }
     }
+
+    
 }
