@@ -9,7 +9,6 @@ public class OptionManager : ComponentBehavior
 {
     [SerializeField] protected List<OptionStatsParam> data;
     [SerializeField] protected Transform chooseTrf;
-    [SerializeField] protected float curTimeScale;
     [SerializeField] protected List<OptionCtrl> listOption;
     protected override void LoadComponent()
     {
@@ -47,19 +46,10 @@ public class OptionManager : ComponentBehavior
         EventDispatcher.Instance.RegisterListener(EventID.OnLevelUp,param=>DisplayOptions());
     }
 
-    protected virtual void SetNewSpeedGame(float newSpeed)
-    {
-        curTimeScale = Time.timeScale;
-        Time.timeScale = newSpeed;
-    }
-
-    protected virtual void ResetToInitialSpeed()
-    {
-        Time.timeScale = curTimeScale;
-    }
+   
     protected virtual void DisplayOptions()
     {
-        SetNewSpeedGame(0);
+        TimeScaleManager.Instance.StopGame();
         LoadDataForOption();
         chooseTrf.gameObject.SetActive(true);
     }

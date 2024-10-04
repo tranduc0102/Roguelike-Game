@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class OptionCtrl : ComponentBehavior
 {
+    [SerializeField] protected Transform optionChooseTrf;
     [SerializeField] protected PlayerCtrl playerCtrl;
     [SerializeField] protected Image image;
     [SerializeField] protected TextMeshProUGUI optionName;
@@ -16,6 +17,7 @@ public class OptionCtrl : ComponentBehavior
     [SerializeField] protected StatsType statsType;
     [SerializeField] protected float valueAdded;
     
+    
     protected override void LoadComponent()
     {
         base.LoadComponent();
@@ -24,6 +26,7 @@ public class OptionCtrl : ComponentBehavior
         LoadOptionName();
         LoadDescription();
         LoadChooseBtn();
+        LoadOptionChooseTrf();
     }
 
     protected virtual void LoadPlayer()
@@ -56,6 +59,11 @@ public class OptionCtrl : ComponentBehavior
         chooseBtn = transform.Find("Button").GetComponent<Button>();
     }
 
+    protected virtual void LoadOptionChooseTrf()
+    {
+        if (optionChooseTrf != null) return;
+        optionChooseTrf = transform.parent.parent.parent.parent;
+    }
     public void Init(Sprite _image, string _optionName, string _description, StatsType _statsType, float _value)
     {
         if (_image != null) image.sprite = _image;
@@ -100,6 +108,13 @@ public class OptionCtrl : ComponentBehavior
                 break;
         }
 
+        HireChooseOption();
+        TimeScaleManager.Instance.ResetToInitialSpeed();
         
+    }
+
+    protected virtual void HireChooseOption()
+    {
+        optionChooseTrf.gameObject.SetActive(false);
     }
 }

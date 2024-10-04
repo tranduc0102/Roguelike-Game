@@ -2019,6 +2019,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 691783011}
   optionName: {fileID: 1738789688}
@@ -2467,6 +2468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 2028586002}
   optionName: {fileID: 565937937}
@@ -3618,6 +3620,7 @@ GameObject:
   - component: {fileID: 753803589}
   - component: {fileID: 753803590}
   - component: {fileID: 753803591}
+  - component: {fileID: 753803592}
   m_Layer: 0
   m_Name: ------Manager-------
   m_TagString: Untagged
@@ -3712,12 +3715,24 @@ MonoBehaviour:
     statsType: 0
     value: 0.02
   chooseTrf: {fileID: 175800406}
-  curTimeScale: 0
   listOption:
   - {fileID: 1091002379}
   - {fileID: 477164435}
   - {fileID: 512480071}
   - {fileID: 1843633693}
+--- !u!114 &753803592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753803586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8df1cb368f35edd4faf5530e024e2190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curTimeScale: 0
 --- !u!1 &776368516
 GameObject:
   m_ObjectHideFlags: 0
@@ -4325,6 +4340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 1691517266}
   optionName: {fileID: 602605393}
@@ -6317,6 +6333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 776368519}
   optionName: {fileID: 27147436}

@@ -9,6 +9,7 @@ public abstract class DamageSender : ComponentBehavior
 
     public float Damage
     {
+        get => damage;
         set => damage = value;
     }
     
