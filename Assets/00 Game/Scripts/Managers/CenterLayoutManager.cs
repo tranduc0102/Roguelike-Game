@@ -5,14 +5,58 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 
-public class OptionManager : ComponentBehavior
+public class CenterLayoutManager : Singleton<CenterLayoutManager> 
 {
+    /// <summary>
+    /// Use for manage center layout
+    /// </summary>
+    [Header("Option Layout")]
     [SerializeField] protected List<OptionStatsParam> data;
     [SerializeField] protected Transform chooseTrf;
     [SerializeField] protected List<OptionCtrl> listOption;
-    protected override void LoadComponent()
+
+    [SerializeField] protected Transform currentLayout;
+    public enum CenterLayoutType
     {
-        base.LoadComponent();
+        None,
+        UpgradePlayerStatus,
+        Setting
+    }
+
+    [SerializeField] protected CenterLayoutType centerLayoutStatus;
+
+    public CenterLayoutType CenterLayoutStatus
+    {
+        get => centerLayoutStatus;
+        set
+        {
+            centerLayoutStatus = value;
+            switch (centerLayoutStatus)
+            {
+                case CenterLayoutType.None:
+                    if(currentLayout != null) currentLayout.gameObject.SetActive(false);
+                    break;
+                case CenterLayoutType.UpgradePlayerStatus:
+                    currentLayout = chooseTrf;
+                    DisplayOptions();
+                    break;
+            }
+        }
+    }
+
+    protected virtual void Start()
+    {
+        LoadComponent();
+    }
+
+    protected void Reset()
+    {
+        LoadComponent();
+    }
+
+    protected virtual void LoadComponent()
+    {
+       
         LoadChooseTrf();
         LoadData();
         LoadListOption();
@@ -43,7 +87,10 @@ public class OptionManager : ComponentBehavior
     }
     protected void OnEnable()
     {
-        EventDispatcher.Instance.RegisterListener(EventID.OnLevelUp,param=>DisplayOptions());
+        EventDispatcher.Instance.RegisterListener(EventID.OnLevelUp, param =>
+        {
+            CenterLayoutStatus = CenterLayoutType.UpgradePlayerStatus;
+        });
     }
 
    
