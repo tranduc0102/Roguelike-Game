@@ -36,6 +36,7 @@ public class WaveManager : Singleton<WaveManager>
     // Sinh quái cho từng wave
     protected void CreateWave(int waveID)
     {
+        EventDispatcher.Instance.PostEvent(EventID.OnFinishWay);
         var wave = Instantiate(dataBase.prefabData.wavePrefab);
         wave.WaveID = waveID;
         wave.name = "Wave" + (waveID + 1);

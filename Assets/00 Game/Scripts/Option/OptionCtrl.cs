@@ -112,7 +112,7 @@ public class OptionCtrl : ComponentBehavior
 
     protected virtual void HireChooseOption()
     {
-        Debug.Log("hehe");
+       
         CenterLayoutManager.Instance.CenterLayoutStatus = CenterLayoutManager.CenterLayoutType.None;
     }
 }

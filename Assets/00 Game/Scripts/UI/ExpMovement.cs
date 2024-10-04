@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,21 +6,32 @@ using UnityEngine;
 public class ExpMovement : ComponentBehavior
 {
     [SerializeField] protected Transform player;
+    [SerializeField] protected Transform expBar;
     [SerializeField] protected float disLimit;
     [SerializeField] protected float speed;
     protected enum ExpState
     {
         Idle,
         Move,
-        Gained
+        GainedByPlayer,
+        GainedByExpBar
     }
 
     [SerializeField] protected ExpState expState;
+
+    private void OnEnable()
+    {
+        EventDispatcher.Instance.RegisterListener(EventID.OnFinishWay, param =>
+        {
+            expState = ExpState.GainedByExpBar;
+        });
+    }
+
     protected override void LoadComponent()
     {
         base.LoadComponent();
         LoadPlayer();
-        
+        LoadExpBar();
         SetData();
     }
 
@@ -27,6 +39,12 @@ public class ExpMovement : ComponentBehavior
     {
         if (player != null) return;
         player = GameObject.Find("Player").transform;
+    }
+
+    protected virtual void LoadExpBar()
+    {
+        if (expBar != null) return;
+        expBar = GameObject.Find("Canvas").transform.Find("Top").Find("PanelEXP");
     }
 
     protected virtual void SetData()
@@ -43,14 +61,15 @@ public class ExpMovement : ComponentBehavior
         float dis = Vector3.Distance(transform.position, player.position);
         if (dis > disLimit) expState = ExpState.Idle;
         else if (dis <= disLimit && dis > 0.1f) expState = ExpState.Move;
-        else expState = ExpState.Gained;
+        else expState = ExpState.GainedByPlayer;
     }
 
-    protected virtual void MoveToPlayer()
+    protected virtual void MoveToObject(Vector3 endPoint, float moveSpeed)
     {
-        Vector3 direction = (player.position - transform.position).normalized;
-        transform.Translate(direction * speed * Time.deltaTime);
+        Vector3 direction = (endPoint - transform.position).normalized;
+        transform.Translate(direction * moveSpeed * Time.deltaTime);
     }
+    
 
     protected virtual void PlayerGainExp()
     {
@@ -61,7 +80,8 @@ public class ExpMovement : ComponentBehavior
     protected virtual void Update()
     {
         SetState();
-        if(expState == ExpState.Move) MoveToPlayer();
-        else if(expState == ExpState.Gained) PlayerGainExp();
+        if(expState == ExpState.Move) MoveToObject(player.position,speed);
+        else if(expState == ExpState.GainedByPlayer) PlayerGainExp();
+        else if(expState == ExpState.GainedByExpBar) MoveToObject(expBar.position,10 * speed);
     }
 }

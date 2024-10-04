@@ -2019,7 +2019,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 691783011}
   optionName: {fileID: 1738789688}
@@ -2468,7 +2467,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 2028586002}
   optionName: {fileID: 565937937}
@@ -3701,18 +3699,18 @@ MonoBehaviour:
     value: 0.05
   - image: {fileID: 0}
     name: Fingers Upgrade
-    description: +3 % crit chance
+    description: + 3% damage
     statsType: 0
     value: 0.03
   - image: {fileID: 0}
     name: Heart Upgrade
-    description: + 3 Max hP
+    description: + 3 maxHp
     statsType: 1
     value: 3
   - image: {fileID: 0}
-    name: Lungs Upgrade
-    description: ' + 2% HpRegeneration'
-    statsType: 0
+    name: Speed Upgrade
+    description: + 2% speed
+    statsType: 2
     value: 0.02
   chooseTrf: {fileID: 175800406}
   listOption:
@@ -3720,6 +3718,8 @@ MonoBehaviour:
   - {fileID: 477164435}
   - {fileID: 512480071}
   - {fileID: 1843633693}
+  currentLayout: {fileID: 0}
+  centerLayoutStatus: 0
 --- !u!114 &753803592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4340,7 +4340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 1691517266}
   optionName: {fileID: 602605393}
@@ -6333,7 +6332,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b7f2214fecd7947bd585afce62b5a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionChooseTrf: {fileID: 175800406}
   playerCtrl: {fileID: 81007129}
   image: {fileID: 776368519}
   optionName: {fileID: 27147436}

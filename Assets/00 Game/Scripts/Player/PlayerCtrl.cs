@@ -21,6 +21,7 @@ public class PlayerCtrl : MonoBehaviour
         set
         {
             maxHp = value;
+            EventDispatcher.Instance.PostEvent(EventID.OnUpdateMaxHealth,maxHp);
             playerDamageReceiver.MaxHp = maxHp;
         }
     }

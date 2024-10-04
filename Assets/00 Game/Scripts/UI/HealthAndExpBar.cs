@@ -8,13 +8,16 @@ public class HealthAndExpBar : MonoBehaviour
     [SerializeField] private Slider sliderHealth;
     [SerializeField] private Slider sliderExp;
     [SerializeField] private TextMeshProUGUI txtHP;
+    [SerializeField] private TextMeshProUGUI txtExp;
     [SerializeField] private float maxExp;
+    [SerializeField] private float curExp;
 
     private void Awake()
     {
         sliderHealth = transform.GetChild(0).GetComponentInChildren<Slider>();
         sliderExp = transform.GetChild(1).GetComponentInChildren<Slider>();
         txtHP = sliderHealth.GetComponentInChildren<TextMeshProUGUI>();
+        txtExp = sliderExp.GetComponentInChildren<TextMeshProUGUI>();
     }
     private void OnEnable()
     {
@@ -22,6 +25,7 @@ public class HealthAndExpBar : MonoBehaviour
         RegisterEvent();
         maxExp = 8f;
         sliderExp.value = 0;
+        curExp = 0;
         SetMaxExp();
     }
 
@@ -70,8 +74,9 @@ public class HealthAndExpBar : MonoBehaviour
 
     protected virtual void UpdateLevel()
     {
+        curExp++;
+        txtExp.text = "Level " + curExp;
         SetMaxExp();
-        // Post sự kiện
-        EventDispatcher.Instance.PostEvent(EventID.OnLevelUp);
+       
     }
 }

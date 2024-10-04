@@ -87,7 +87,7 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
     }
     protected void OnEnable()
     {
-        EventDispatcher.Instance.RegisterListener(EventID.OnLevelUp, param =>
+        EventDispatcher.Instance.RegisterListener(EventID.OnFinishWay, param =>
         {
             CenterLayoutStatus = CenterLayoutType.UpgradePlayerStatus;
         });
