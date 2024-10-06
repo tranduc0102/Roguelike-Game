@@ -62,6 +62,10 @@ public class PlayerCtrl : MonoBehaviour
     {
         LoadScripts();
     }
+    private void Start()
+    {
+        LoadData(GameManager.Instance.dataPlayer);
+    }
 
     protected virtual void LoadScripts()
     {
@@ -102,5 +106,8 @@ public class PlayerCtrl : MonoBehaviour
         speed = data.basicSpeed;
         runtimeAnimatorController = data.animator;
         iD = data.playerID;
+        playerAnimation.LoadRunTimeAnimator();
+        playerDamageReceiver.LoadHP();
+        playerMovement.Speed = speed;
     }
 }

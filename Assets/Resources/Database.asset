@@ -19,8 +19,14 @@ MonoBehaviour:
   - playerName: Basic Character
     playerID: 0
     basicHp: 15
+    basicDamage: 15
+    basicSpeed: 6
+    animator: {fileID: 9100000, guid: 6703bc23763d26a419ee2c84ab2a25e0, type: 2}
+  - playerName: Other Player
+    playerID: 1
+    basicHp: 30
     basicDamage: 10
-    basicSpeed: 4
+    basicSpeed: 5
     animator: {fileID: 9100000, guid: 65896ca2c02fe5945ba22b2bce8a3d75, type: 2}
   listEnemyData:
   - enemyName: Melee Basic Enemy
