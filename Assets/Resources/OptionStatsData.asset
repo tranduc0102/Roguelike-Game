@@ -14,25 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ListOptionStats:
   - image: {fileID: 0}
-    name: Triceps Upgrade
-    description: + 5% damage
-    statsType: 0
-    value: 0.05
-  - image: {fileID: 0}
-    name: Fingers Upgrade
-    description: + 3% damage
-    statsType: 0
-    value: 0.03
-  - image: {fileID: 0}
-    name: Heart Upgrade
-    description: + 3 maxHp
-    statsType: 1
-    value: 3
-  - image: {fileID: 0}
-    name: Speed Upgrade
-    description: + 2% speed
-    statsType: 2
-    value: 0.02
+    name: Weapon
+    description: Add Weapon
+    statsType: 3
+    value: 0
   - image: {fileID: 0}
     name: Speed Upgrade
     description: + 10% speed
@@ -40,11 +25,11 @@ MonoBehaviour:
     value: 0.1
   - image: {fileID: 0}
     name: Heart Upgrade
-    description: + 6 maxHp
-    statsType: 1
-    value: 6
+    description: + 3 maxHp
+    statsType: 2
+    value: 3
   - image: {fileID: 0}
     name: Fingers Upgrade
     description: + 10% damage
-    statsType: 0
+    statsType: 2
     value: 0.1

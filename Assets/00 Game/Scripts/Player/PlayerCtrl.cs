@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    [SerializeField] protected int iD;
-    [SerializeField] protected float maxHp;
-    [SerializeField] protected float damage;
-    [SerializeField] protected float speed;
-    [SerializeField] protected PlayerMovement playerMovement;
-    [SerializeField] protected PlayerAnimation playerAnimation;
-    [SerializeField] protected RuntimeAnimatorController runtimeAnimatorController;
-    [SerializeField] protected PlayerDamageReceiver playerDamageReceiver;
-    [SerializeField] protected List<Weapon> listWeapon;
+    protected int iD;
+    protected float maxHp;
+    protected float damage;
+    protected float speed;
+    protected PlayerMovement playerMovement;
+    protected PlayerAnimation playerAnimation;
+    protected RuntimeAnimatorController runtimeAnimatorController;
+    protected PlayerDamageReceiver playerDamageReceiver;
+    protected List<Weapon> listWeapon;
     public float MaxHp
     {
         get => maxHp;
@@ -32,10 +32,6 @@ public class PlayerCtrl : MonoBehaviour
         set
         {
             damage = value;
-            foreach (Weapon wp in listWeapon)
-            {
-                wp.Damage = damage;
-            }
         }
     }
 
@@ -64,15 +60,14 @@ public class PlayerCtrl : MonoBehaviour
     }
     private void Start()
     {
-        LoadData(GameManager.Instance.dataPlayer);
+        LoadData(GameManager.Instance.Player);
     }
-
     protected virtual void LoadScripts()
     {
         LoadPlayerMovement();
         LoadPlayerAnimator();
         LoadPlayerDamageReceiver();
-        LoadListWeapon();
+        /*LoadListWeapon();*/
     }
 
     protected virtual void LoadPlayerMovement()
@@ -90,14 +85,14 @@ public class PlayerCtrl : MonoBehaviour
         playerDamageReceiver = transform.GetComponentInChildren<PlayerDamageReceiver>();
     }
 
-    protected virtual void LoadListWeapon()
+ /*   protected virtual void LoadListWeapon()
     {
         foreach (Transform weapon in transform)
         {
             Weapon wp = weapon.GetComponent<Weapon>();
-            if(wp != null) listWeapon.Add(wp);
+            if (wp != null) listWeapon.Add(wp);
         }
-    }
+    }*/
 
     public virtual void LoadData(PlayerData data)
     {

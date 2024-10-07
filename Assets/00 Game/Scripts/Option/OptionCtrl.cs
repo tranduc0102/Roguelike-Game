@@ -6,9 +6,9 @@ public class OptionCtrl : OptionBase
 {
     
    
-    [SerializeField] protected PlayerCtrl playerCtrl;
-    [SerializeField] protected StatsType statsType;
-    [SerializeField] protected float valueAdded;
+    protected PlayerCtrl playerCtrl;
+    protected StatsType statsType;
+    protected float valueAdded;
     
     
     protected override void LoadComponent()
@@ -63,6 +63,9 @@ public class OptionCtrl : OptionBase
                 break;
             case StatsType.Speed:
                 playerCtrl.Speed = GetNewValue(playerCtrl.Speed);
+                break;
+            case StatsType.AddWeapon:
+                EventDispatcher.Instance.PostEvent(EventID.AddWeapon);
                 break;
         }
 

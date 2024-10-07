@@ -23,5 +23,6 @@ public enum StatsType
 {
     Damage,
     MaxHp,
-    Speed
+    Speed,
+    AddWeapon
 }

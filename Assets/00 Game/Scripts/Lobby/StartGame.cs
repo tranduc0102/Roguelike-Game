@@ -7,6 +7,6 @@ public class StartGame : MonoBehaviour
 
     public virtual void OnStartGame()
     {
-        GameManager.Instance.ActivePanelChoosePlayer();
+        GameManager.Instance.ShowPlayerSelectionPanel();
     }
 }

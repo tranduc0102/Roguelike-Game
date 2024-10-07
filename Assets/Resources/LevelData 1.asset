@@ -27,7 +27,7 @@ MonoBehaviour:
     - name: Wave 1.1
       spawnCooldown: 1
       listEnemiesID: 010000000100000001000000
-    TimeWave: 40
+    TimeWave: 10
   - name: Wave 2
     listMiniWaveData:
     - name: 
@@ -39,4 +39,4 @@ MonoBehaviour:
     - name: 
       spawnCooldown: 0
       listEnemiesID: 0000000000000000000000000000000000000000
-    TimeWave: 60
+    TimeWave: 10

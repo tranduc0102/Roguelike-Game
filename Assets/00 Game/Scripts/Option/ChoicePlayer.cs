@@ -26,13 +26,12 @@ public class ChoicePlayer : OptionBase
     }
     private void LoadScenceGame()
     {
-        GameManager.Instance.dataPlayer = playerData;
-        SceneManager.LoadSceneAsync("InGame");
-        GameManager.Instance.LoadData(playerData);
+        GameManager.Instance.Player = playerData;
+        GameManager.Instance.ShowWeaponSelectionPanel();
     }
 
     protected virtual void HireChooseOption()
     {
-        GameManager.Instance.HintPanelChoosePlayer();
+        GameManager.Instance.HidePlayerSelectionPanel();
     }
 }
