@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class OptionBase : ComponentBehavior
 {
 
-    [SerializeField] protected PlayerCtrl playerCtrl;
     [SerializeField] protected Image image;
     [SerializeField] protected TextMeshProUGUI optionName;
     [SerializeField] protected TextMeshProUGUI description;

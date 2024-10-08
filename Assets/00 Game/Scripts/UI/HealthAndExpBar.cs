@@ -28,9 +28,13 @@ public class HealthAndExpBar : MonoBehaviour
         curExp = 0;
         SetMaxExp();
     }
+  /*  private void OnDisable()
+    {
+        RemoverEvent();
+    }*/
 
-    
-    
+
+
     private void RegisterEvent()
     {
         EventDispatcher.Instance.RegisterListener(EventID.OnUpdateMaxHealth,param=>SetMaxHealth((float)param));
@@ -38,6 +42,13 @@ public class HealthAndExpBar : MonoBehaviour
         EventDispatcher.Instance.RegisterListener(EventID.OnGainExp,param=>SetExp((float)param));
         EventDispatcher.Instance.RegisterListener(EventID.OnUpdateCurrentHealth,param=>SetHealth((float)param));
     }
+  /*  private void RemoverEvent()
+    {
+
+        EventDispatcher.Instance.RemoveListener(EventID.OnUpdateMaxHealth);
+        EventDispatcher.Instance.RemoveListener(EventID.OnGainExp);
+        EventDispatcher.Instance.RemoveListener(EventID.OnUpdateCurrentHealth);
+    }*/
 
    
 

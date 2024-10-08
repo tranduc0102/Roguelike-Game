@@ -11,6 +11,7 @@ public class Wave : MonoBehaviour
     private int idMiniWave = 0;
     protected int time;
     protected int timeWave;
+    protected int timeSpawn;
 
     public int TimeWave
     {
@@ -24,6 +25,7 @@ public class Wave : MonoBehaviour
         waveData = data;
         listMiniWavesData = data.listMiniWaveData;
         timeWave = data.TimeWave;
+        timeSpawn = data.TimeSpawn;
         CreateMiniWaves();
     }
 
@@ -54,8 +56,8 @@ public class Wave : MonoBehaviour
                 idMiniWave = 0;
             }
 
-            yield return new WaitForSeconds(3f); // Chờ 3 giây trước khi spawn MiniWave tiếp theo
-            time += 3;
+            yield return new WaitForSeconds(timeSpawn); // Chờ 3 giây trước khi spawn MiniWave tiếp theo
+            time += timeSpawn;
         }
     }
 

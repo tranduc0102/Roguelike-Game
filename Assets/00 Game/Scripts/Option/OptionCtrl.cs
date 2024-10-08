@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class OptionCtrl : OptionBase
 {
-    
-   
-    protected PlayerCtrl playerCtrl;
-    protected StatsType statsType;
-    protected float valueAdded;
+    [SerializeField] protected PlayerCtrl playerCtrl;
+    [SerializeField] protected StatsType statsType;
+    [SerializeField] protected float valueAdded;
     
     
     protected override void LoadComponent()
@@ -33,8 +31,9 @@ public class OptionCtrl : OptionBase
         valueAdded = _value;
     }
 
-    private void OnEnable()
+    protected override void Start()
     {
+        base.Start();
         chooseBtn.onClick.AddListener(UpgradePlayerStatus);
     }
 

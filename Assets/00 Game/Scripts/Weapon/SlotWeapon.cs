@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SlotWeapon : MonoBehaviour
 {
@@ -16,13 +17,18 @@ public class SlotWeapon : MonoBehaviour
         new Vector3(0, -1, 0)        // 270 độ
     };
     private int index = 0;
-    private List<Transform> slots = new List<Transform>();
+    private bool checkFirstWeapon = false;
+    [SerializeField]private List<Transform> slots = new List<Transform>();
 
     private void OnEnable()
     {
-        EventDispatcher.Instance.RegisterListener(EventID.AddWeapon,param=>AddWeapon());
+        EventDispatcher.Instance.RegisterListener(EventID.AddWeapon, param=>AddWeapon());
     }
 
+ /*   private void OnDisable()
+    {
+        EventDispatcher.Instance.RemoveListener(EventID.AddWeapon);
+    }*/
     private void Start()
     {
         LoadData();
@@ -30,9 +36,13 @@ public class SlotWeapon : MonoBehaviour
     private void LoadData()
     {
         slots = Resources.Load<DataWeapon>("DataWeapon").weapons;
-        GameObject newWeapon = PoolingManager.Spawn(slots[GameManager.Instance.IDWeapon].gameObject, transform.position + posWeapon[index], Quaternion.identity);
-        newWeapon.transform.parent = transform;
-        index++;
+        if (!checkFirstWeapon)
+        {
+            GameObject newWeapon = PoolingManager.Spawn(slots[GameManager.Instance.IDWeapon].gameObject, transform.position + posWeapon[index], Quaternion.identity);
+            newWeapon.transform.parent = transform;
+            checkFirstWeapon = true;
+            index++;
+        }
     }
     private void AddWeapon()
     {
@@ -41,7 +51,7 @@ public class SlotWeapon : MonoBehaviour
             return;
         }
 
-        int randomIndex = Random.Range(0, slots.Count);
+        int randomIndex = Random.Range(0, 2);
         GameObject newWeapon = PoolingManager.Spawn(slots[randomIndex].gameObject, transform.position+posWeapon[index],Quaternion.identity);
         newWeapon.transform.parent = transform;
         index++;

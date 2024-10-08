@@ -6,15 +6,15 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    protected int iD;
-    protected float maxHp;
-    protected float damage;
-    protected float speed;
-    protected PlayerMovement playerMovement;
-    protected PlayerAnimation playerAnimation;
-    protected RuntimeAnimatorController runtimeAnimatorController;
-    protected PlayerDamageReceiver playerDamageReceiver;
-    protected List<Weapon> listWeapon;
+    [SerializeField] protected int iD;
+    [SerializeField] protected float maxHp;
+    [SerializeField] protected float damage;
+    [SerializeField] protected float speed;
+    [SerializeField] protected PlayerMovement playerMovement;
+    [SerializeField] protected PlayerAnimation playerAnimation;
+    [SerializeField] protected RuntimeAnimatorController runtimeAnimatorController;
+    [SerializeField] protected PlayerDamageReceiver playerDamageReceiver;
+    [SerializeField] protected List<Weapon> listWeapon;
     public float MaxHp
     {
         get => maxHp;
@@ -67,7 +67,6 @@ public class PlayerCtrl : MonoBehaviour
         LoadPlayerMovement();
         LoadPlayerAnimator();
         LoadPlayerDamageReceiver();
-        /*LoadListWeapon();*/
     }
 
     protected virtual void LoadPlayerMovement()
@@ -85,24 +84,14 @@ public class PlayerCtrl : MonoBehaviour
         playerDamageReceiver = transform.GetComponentInChildren<PlayerDamageReceiver>();
     }
 
- /*   protected virtual void LoadListWeapon()
-    {
-        foreach (Transform weapon in transform)
-        {
-            Weapon wp = weapon.GetComponent<Weapon>();
-            if (wp != null) listWeapon.Add(wp);
-        }
-    }*/
-
     public virtual void LoadData(PlayerData data)
     {
         maxHp = data.basicHp;
         damage = data.basicDamage;
-        speed = data.basicSpeed;
+        Speed = data.basicSpeed;
         runtimeAnimatorController = data.animator;
         iD = data.playerID;
         playerAnimation.LoadRunTimeAnimator();
         playerDamageReceiver.LoadHP();
-        playerMovement.Speed = speed;
     }
 }
