@@ -103,4 +103,10 @@ public class PlayerCtrl : MonoBehaviour
         runtimeAnimatorController = data.animator;
         iD = data.playerID;
     }
+
+    public void FillHp()
+    {
+        playerDamageReceiver.FillHp();
+        EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth,maxHp);
+    }
 }

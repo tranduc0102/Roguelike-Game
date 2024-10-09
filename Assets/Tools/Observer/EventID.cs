@@ -6,5 +6,6 @@ public enum EventID
     OnUpdateCurrentHealth,
     OnGainExp,
     CheckAllEnemyDied,
-    OnFinishWay
+    OnFinishWay,
+    GameOver
 }

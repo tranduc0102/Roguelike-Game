@@ -22,6 +22,10 @@ public abstract class DamageReceiver : ComponentBehavior
         curHp = maxHp;
     }
 
+    public virtual void FillHp()
+    {
+        curHp = maxHp;
+    }
     protected override void LoadComponent()
     {
         LoadCtrl();

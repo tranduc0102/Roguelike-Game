@@ -104,7 +104,7 @@ public class OptionCtrl : ComponentBehavior
                 playerCtrl.Speed = GetNewValue(playerCtrl.Speed);
                 break;
         }
-
+        playerCtrl.FillHp();
         HireChooseOption();
         TimeScaleManager.Instance.ResetToInitialSpeed();
         
