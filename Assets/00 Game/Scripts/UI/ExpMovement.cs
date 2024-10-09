@@ -58,10 +58,11 @@ public class ExpMovement : ComponentBehavior
 
     protected virtual void SetState()
     {
+        
         float dis = Vector3.Distance(transform.position, player.position);
         if (dis > disLimit) expState = ExpState.Idle;
         else if (dis <= disLimit && dis > 0.1f) expState = ExpState.Move;
-        else expState = ExpState.GainedByPlayer;
+        else  expState = ExpState.GainedByPlayer;
     }
 
     protected virtual void MoveToObject(Vector3 endPoint, float moveSpeed)
