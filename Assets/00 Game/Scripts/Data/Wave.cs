@@ -11,6 +11,7 @@ public class Wave : MonoBehaviour
     private int idMiniWave = 0;
     protected int time;
     protected int timeWave;
+    protected int timeSpawn;
 
     public int TimeWave
     {
@@ -24,6 +25,7 @@ public class Wave : MonoBehaviour
         waveData = data;
         listMiniWavesData = data.listMiniWaveData;
         timeWave = data.TimeWave;
+        timeSpawn = data.TimeSpawn;
         CreateMiniWaves();
     }
 
@@ -39,7 +41,7 @@ public class Wave : MonoBehaviour
         // Tạo ra các miniWave liên tục cứ sau mỗi 10s và nếu thời gian của wave còn dưới 20s thì không spawn miniWave nữa
         while (time <= timeWave)
         {
-            /*if (time >= (timeWave - 10)) // Nếu thời gian còn dưới 20s thì không spawn miniWave nữa
+            /*if (time >= (timeWave - 10)) // Nếu thời gian còn dưới 10s thì không spawn miniWave nữa
             {
                 yield break; // Thoát khỏi Coroutine nếu điều kiện thỏa
             }*/
@@ -54,8 +56,8 @@ public class Wave : MonoBehaviour
                 idMiniWave = 0;
             }
 
-            yield return new WaitForSeconds(3f); // Chờ 3 giây trước khi spawn MiniWave tiếp theo
-            time += 5;
+            yield return new WaitForSeconds(timeSpawn); // Chờ 3 giây trước khi spawn MiniWave tiếp theo
+            time += timeSpawn;
         }
     }
 

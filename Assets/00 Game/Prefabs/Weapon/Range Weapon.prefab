@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4677979924517785911}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -73,12 +73,12 @@ MonoBehaviour:
   attackRange: 5
   layerEnemy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   damagePlayer: 0
   damage: 0
   aimLeft: 12
-  attackDelay: 0.3
-  speedAttack: 2
+  attackDelay: 0.4
+  speedAttack: 10
   prefabBullet: {fileID: 784052022763699808, guid: 4fced43194af67248836cbe10d5b08eb, type: 3}
 --- !u!1 &4707095925905183756
 GameObject:

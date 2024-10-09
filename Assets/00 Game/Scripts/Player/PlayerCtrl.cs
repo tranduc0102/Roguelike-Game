@@ -32,10 +32,6 @@ public class PlayerCtrl : MonoBehaviour
         set
         {
             damage = value;
-            foreach (Weapon wp in listWeapon)
-            {
-                wp.Damage = damage;
-            }
         }
     }
 
@@ -62,13 +58,15 @@ public class PlayerCtrl : MonoBehaviour
     {
         LoadScripts();
     }
-
+    private void Start()
+    {
+        LoadData(GameManager.Instance.Player);
+    }
     protected virtual void LoadScripts()
     {
         LoadPlayerMovement();
         LoadPlayerAnimator();
         LoadPlayerDamageReceiver();
-        LoadListWeapon();
     }
 
     protected virtual void LoadPlayerMovement()
@@ -86,22 +84,15 @@ public class PlayerCtrl : MonoBehaviour
         playerDamageReceiver = transform.GetComponentInChildren<PlayerDamageReceiver>();
     }
 
-    protected virtual void LoadListWeapon()
-    {
-        foreach (Transform weapon in transform)
-        {
-            Weapon wp = weapon.GetComponent<Weapon>();
-            if(wp != null) listWeapon.Add(wp);
-        }
-    }
-
     public virtual void LoadData(PlayerData data)
     {
         maxHp = data.basicHp;
         damage = data.basicDamage;
-        speed = data.basicSpeed;
+        Speed = data.basicSpeed;
         runtimeAnimatorController = data.animator;
         iD = data.playerID;
+        playerAnimation.LoadRunTimeAnimator();
+        playerDamageReceiver.LoadHP();
     }
 
     public void FillHp()

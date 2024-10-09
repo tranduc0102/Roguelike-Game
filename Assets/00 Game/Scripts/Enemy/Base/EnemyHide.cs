@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
 
 public class EnemyHide : ComponentBehavior
@@ -21,6 +21,14 @@ public class EnemyHide : ComponentBehavior
         base.LoadComponent();
         Load();
     }
+    void OnDestroy()
+    {
+        if (objHide != null)
+        {
+            objHide.transform.DOKill(); // Hủy tất cả các tween liên quan đến objHide
+        }
+    }
+
 
     protected void Load()
     {
@@ -43,27 +51,34 @@ public class EnemyHide : ComponentBehavior
     }
     private void OnScale(Transform obj, Vector3 originalScale, Vector3 toScale)
     {
-        obj.DOScale(toScale, 0.5f)
+        if (obj != null)
+        {
+            obj.DOScale(toScale, 0.5f)
             .SetEase(Ease.InOutSine)
             .OnComplete(() =>
             {
-                obj.DOScale(originalScale, 0.5f)
-                    .SetEase(Ease.OutBounce)
-                    .SetDelay(0.1f)
-                    .OnComplete(() =>
-                    {
-                        loopCount++;
-                        if (loopCount < maxLoops)
-                        {
-                            OnScale(obj, originalScale, toScale);
-                        }
-                        else
-                        {
-                            OnActive();
-                        }
-                    });
+                if (obj != null) // Kiểm tra lần nữa
+                {
+                    obj.DOScale(originalScale, 0.5f)
+                   .SetEase(Ease.OutBounce)
+                   .SetDelay(0.1f)
+                   .OnComplete(() =>
+                   {
+                       loopCount++;
+                       if (loopCount < maxLoops)
+                       {
+                           OnScale(obj, originalScale, toScale);
+                       }
+                       else
+                       {
+                           OnActive();
+                       }
+                   });
+                }
             });
+        }
     }
+
 
     private void OnActive()
     {

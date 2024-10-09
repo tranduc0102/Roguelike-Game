@@ -7,12 +7,12 @@ public class PlayerAnimation : MonoBehaviour
     private static readonly int Horizontal = Animator.StringToHash("Horizontal");
     private static readonly int IsRunning = Animator.StringToHash("IsRunning");
 
-    private void Start()
+    private void OnEnable()
     {
         LoadRunTimeAnimator();
     }
 
-    private void LoadRunTimeAnimator()
+    public void LoadRunTimeAnimator()
     {
         animator = GetComponent<Animator>();
         animator.runtimeAnimatorController = transform.parent.GetComponent<PlayerCtrl>()
@@ -20,7 +20,11 @@ public class PlayerAnimation : MonoBehaviour
     }
     private void Update()
     {
-        Animation();
+        if (animator.runtimeAnimatorController != null)
+        {
+            Animation();
+
+        }
     }
     protected virtual void Animation()
     {

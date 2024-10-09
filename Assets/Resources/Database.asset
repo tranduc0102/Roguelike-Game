@@ -19,15 +19,21 @@ MonoBehaviour:
   - playerName: Basic Character
     playerID: 0
     basicHp: 15
+    basicDamage: 15
+    basicSpeed: 6
+    animator: {fileID: 9100000, guid: 6703bc23763d26a419ee2c84ab2a25e0, type: 2}
+  - playerName: Other Player
+    playerID: 1
+    basicHp: 30
     basicDamage: 10
-    basicSpeed: 4
+    basicSpeed: 5
     animator: {fileID: 9100000, guid: 65896ca2c02fe5945ba22b2bce8a3d75, type: 2}
   listEnemyData:
   - enemyName: Melee Basic Enemy
     enemyID: 0
     maxHp: 30
     damage: 1
-    speed: 2
+    speed: 3.5
     timeAttack: 1
     attackRange: 0.5
     enemyPrefab: {fileID: 9091041831213826966, guid: 4b58aa99fdd9c5542ae2cc3ce72786e8, type: 3}
@@ -35,7 +41,7 @@ MonoBehaviour:
     enemyID: 1
     maxHp: 40
     damage: 2
-    speed: 1.5
+    speed: 4
     timeAttack: 1
-    attackRange: 7
+    attackRange: 4
     enemyPrefab: {fileID: 8537984620292427992, guid: ca499ee699010314399c12be0c1082c6, type: 3}
