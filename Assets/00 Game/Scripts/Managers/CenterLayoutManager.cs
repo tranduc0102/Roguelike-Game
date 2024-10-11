@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -13,13 +12,13 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
     /// Use for manage center layout
     /// </summary>
     [Header("Option Layout")]
-    [SerializeField] protected List<OptionStatsParam> optionData;
+    [SerializeField] protected List<OptionStatsParam> data;
     [SerializeField] protected Transform chooseTrf;
     [SerializeField] protected List<OptionCtrl> listOption;
-
     [Header("Setting")] 
     [SerializeField] protected Transform settingTrf;
     [SerializeField] protected Button settingBtn;
+    
     [SerializeField] protected Transform currentLayout;
     public enum CenterLayoutType
     {
@@ -71,22 +70,24 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
     {
        
         LoadChooseTrf();
-        LoadOptionData();
+        LoadData();
         LoadListOption();
 
         LoadSettingTrf();
         LoadSettingBtn();
     }
+
     protected virtual void LoadChooseTrf()
     {
-        if (chooseTrf != null) return;
+        if (chooseTrf!= null) return;
         chooseTrf = GameObject.Find("Canvas").transform.GetChild(1).Find("OptionChosen").transform;
     }
-    protected virtual void LoadOptionData()
+
+    protected virtual void LoadData()
     {
-        if (optionData.Count != 0) return;
+        if (data.Count != 0) return;
         string resPath = "OptionStatsData";
-        optionData = Resources.Load<OptionStatsData>(resPath).ListOptionStats;
+        data = Resources.Load<OptionStatsData>(resPath).ListOptionStats;
     }
 
     protected virtual void LoadListOption()
@@ -97,21 +98,9 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
         {
             listOption.Add(option.GetComponent<OptionCtrl>());
         }
+        
+    }
 
-    }
-    protected virtual void LoadDataForOption()
-    {
-        if (listOption.Count == 0)
-        {
-            Debug.LogWarning("OptionCtrls are not loaded by Option Manager");
-            return;
-        }
-        foreach (OptionCtrl optionCtrl in listOption)
-        {
-            int id = Random.Range(0, listOption.Count);
-            optionCtrl.Init(optionData[id].image, optionData[id].name, optionData[id].description, optionData[id].statsType, optionData[id].value);
-        }
-    }
     protected virtual void LoadSettingTrf()
     {
         if(settingTrf != null) return;
@@ -129,12 +118,11 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
         {
             CenterLayoutStatus = CenterLayoutType.UpgradePlayerStatus;
         });
-           settingBtn.onClick.AddListener(() =>
-           {
-               CenterLayoutStatus = CenterLayoutType.Setting;
-           });
+        settingBtn.onClick.AddListener(() =>
+        {
+            CenterLayoutStatus = CenterLayoutType.Setting;
+        });
     }
-  
 
     protected virtual void ChangeCurrentLayout(Transform newLayout)
     {
@@ -145,5 +133,22 @@ public class CenterLayoutManager : Singleton<CenterLayoutManager>
         TimeScaleManager.Instance.StopGame();
         currentLayout.gameObject.SetActive(true);
         
-    }    
+    }
+   
+
+    protected virtual void LoadDataForOption()
+    {
+        if (listOption.Count == 0)
+        {
+            Debug.LogWarning("OptionCtrls are not loaded by Option Manager");
+            return;
+        }
+        foreach (OptionCtrl optionCtrl in listOption)
+        {
+            int id = Random.Range(0, listOption.Count);
+            optionCtrl.Init(data[id].image,data[id].name,data[id].description,data[id].statsType, data[id].value);
+        }
+    }
+
+    
 }

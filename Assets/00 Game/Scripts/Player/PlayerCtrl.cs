@@ -109,10 +109,4 @@ public class PlayerCtrl : MonoBehaviour
         playerDamageReceiver.FillHp();
         EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth,maxHp);
     }
-
-    public void FillHp()
-    {
-        playerDamageReceiver.FillHp();
-        EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth,maxHp);
-    }
 }
