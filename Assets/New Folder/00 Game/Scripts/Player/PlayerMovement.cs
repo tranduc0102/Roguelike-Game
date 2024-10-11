@@ -16,9 +16,12 @@ public class PlayerMovement : MonoBehaviour
         speed = transform.parent.GetComponent<PlayerCtrl>().Speed;
     }
 
+    private void Update() {
+        this.GetInput();
+    }
+
     protected void FixedUpdate()
    {
-      this.GetInput();
       this.Moving();
    }
 

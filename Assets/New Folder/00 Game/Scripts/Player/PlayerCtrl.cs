@@ -69,6 +69,7 @@ public class PlayerCtrl : MonoBehaviour
         LoadPlayerAnimator();
         LoadPlayerDamageReceiver();
         LoadListWeapon();
+        LoadData(GameManager.Instance.Player);
     }
 
     protected virtual void LoadPlayerMovement()
@@ -99,9 +100,10 @@ public class PlayerCtrl : MonoBehaviour
     {
         maxHp = data.basicHp;
         damage = data.basicDamage;
-        speed = data.basicSpeed;
+        Speed = data.basicSpeed;
         runtimeAnimatorController = data.animator;
         iD = data.playerID;
+        
     }
 
     public void FillHp()

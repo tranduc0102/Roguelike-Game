@@ -7,5 +7,6 @@ public enum EventID
     OnGainExp,
     CheckAllEnemyDied,
     OnFinishWay,
+    AddWeapon,
     GameOver
 }

@@ -1147,8 +1147,6 @@ MonoBehaviour:
   optionName: {fileID: 424511219}
   description: {fileID: 959566866}
   chooseBtn: {fileID: 2022540043}
-  weapons: {fileID: 0}
-  idWeapon: 0
 --- !u!114 &383166223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1581,13 +1579,6 @@ MonoBehaviour:
   optionName: {fileID: 1220056814}
   description: {fileID: 1749562211}
   chooseBtn: {fileID: 1365752941}
-  playerData:
-    playerName: 
-    playerID: 0
-    basicHp: 0
-    basicDamage: 0
-    basicSpeed: 5
-    animator: {fileID: 0}
 --- !u!114 &538831534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3064,13 +3055,6 @@ MonoBehaviour:
   optionName: {fileID: 490977985}
   description: {fileID: 1388600066}
   chooseBtn: {fileID: 259486557}
-  playerData:
-    playerName: 
-    playerID: 0
-    basicHp: 0
-    basicDamage: 0
-    basicSpeed: 5
-    animator: {fileID: 0}
 --- !u!114 &1214431865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3404,6 +3388,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c5b9b1f593f144d8744f8eec0837d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerSelectionPanel: {fileID: 0}
+  availablePlayers: []
+  choicePlayersList: []
+  weaponSelectionPanel: {fileID: 849215898}
+  availableWeapon: []
+  choiceWeaponsList: []
 --- !u!4 &1242649545
 Transform:
   m_ObjectHideFlags: 0
@@ -5023,8 +5013,6 @@ MonoBehaviour:
   optionName: {fileID: 104480432}
   description: {fileID: 636949467}
   chooseBtn: {fileID: 138360980}
-  weapons: {fileID: 0}
-  idWeapon: 0
 --- !u!114 &1821492647
 MonoBehaviour:
   m_ObjectHideFlags: 0

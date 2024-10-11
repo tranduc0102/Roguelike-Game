@@ -16,12 +16,18 @@ MonoBehaviour:
     wavePrefab: {fileID: 6807063821068699476, guid: d36b30d00f368ea4c9237c27a0bc36dd, type: 3}
     miniWavePrefab: {fileID: 416803599903453693, guid: 2cad538b72694784fbcfd813d2d8d79a, type: 3}
   listPlayerData:
-  - playerName: Basic Character
+  - playerName: Player 1
     playerID: 0
     basicHp: 15
     basicDamage: 10
     basicSpeed: 4
     animator: {fileID: 9100000, guid: 65896ca2c02fe5945ba22b2bce8a3d75, type: 2}
+  - playerName: Player 2
+    playerID: 1
+    basicHp: 30
+    basicDamage: 15
+    basicSpeed: 5
+    animator: {fileID: 9100000, guid: 6703bc23763d26a419ee2c84ab2a25e0, type: 2}
   listEnemyData:
   - enemyName: Melee Basic Enemy
     enemyID: 0

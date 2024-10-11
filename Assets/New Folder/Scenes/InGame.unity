@@ -4213,7 +4213,6 @@ GameObject:
   - component: {fileID: 753803588}
   - component: {fileID: 753803587}
   - component: {fileID: 753803589}
-  - component: {fileID: 753803590}
   - component: {fileID: 753803592}
   - component: {fileID: 753803591}
   m_Layer: 0
@@ -4264,18 +4263,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataBase: {fileID: 11400000, guid: dd9dfdce17fbc3f41a69c49734545342, type: 2}
   levelData: {fileID: 11400000, guid: 9d2eac9f9c5a14b4d853c6d4939e6207, type: 2}
---- !u!114 &753803590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753803586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9c5b9b1f593f144d8744f8eec0837d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &753803591
 MonoBehaviour:
   m_ObjectHideFlags: 0
