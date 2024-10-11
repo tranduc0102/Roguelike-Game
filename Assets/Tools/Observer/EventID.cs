@@ -5,7 +5,6 @@ public enum EventID
     OnUpdateMaxHealth,
     OnUpdateCurrentHealth,
     OnGainExp,
-    AddWeapon,
     CheckAllEnemyDied,
     OnFinishWay,
     GameOver

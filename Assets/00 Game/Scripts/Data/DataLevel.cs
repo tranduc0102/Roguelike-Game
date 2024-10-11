@@ -12,7 +12,6 @@ public class WaveData
     public string name;
     public List<MiniWaveData> listMiniWaveData;
     public int TimeWave;
-    public int TimeSpawn;
 }
 [Serializable]
 public class MiniWaveData

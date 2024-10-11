@@ -842,7 +842,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -49798061
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1143,7 +1143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6cf2fda51d3694f9d0e133b5ac6514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCtrl: {fileID: 0}
   image: {fileID: 1426059455}
   optionName: {fileID: 424511219}
   description: {fileID: 959566866}
@@ -1576,7 +1575,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075313aea6e76fc459450fed05b67915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCtrl: {fileID: 0}
   image: {fileID: 90496756}
   optionName: {fileID: 1220056814}
   description: {fileID: 1749562211}
@@ -3053,7 +3051,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075313aea6e76fc459450fed05b67915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCtrl: {fileID: 0}
   image: {fileID: 941076933}
   optionName: {fileID: 490977985}
   description: {fileID: 1388600066}
@@ -3397,7 +3394,6 @@ MonoBehaviour:
   weaponSelectionPanel: {fileID: 0}
   availableWeapon: []
   choiceWeaponsList: []
-  selectedWeapon: {fileID: 0}
 --- !u!4 &1242649545
 Transform:
   m_ObjectHideFlags: 0
@@ -4812,7 +4808,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -49798061
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 2
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5013,7 +5009,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb6cf2fda51d3694f9d0e133b5ac6514, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCtrl: {fileID: 0}
   image: {fileID: 645789164}
   optionName: {fileID: 104480432}
   description: {fileID: 636949467}

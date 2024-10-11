@@ -14,13 +14,7 @@ public class PlayerDamageReceiver : DamageReceiver
         EventDispatcher.Instance.PostEvent(EventID.OnUpdateMaxHealth,maxHp);
         EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth,curHp);
     }
-    public void LoadHP()
-    {
-        maxHp = playerCtrl.MaxHp;
-        curHp = maxHp;
-        EventDispatcher.Instance.PostEvent(EventID.OnUpdateMaxHealth, maxHp);
-        EventDispatcher.Instance.PostEvent(EventID.OnUpdateCurrentHealth, curHp);
-    }
+
     public override void Deduct(float damage)
     {
         base.Deduct(damage);

@@ -1,10 +1,20 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
-
-public class OptionCtrl : OptionBase
+public class OptionCtrl : ComponentBehavior
 {
+    
+   
     [SerializeField] protected PlayerCtrl playerCtrl;
+    [SerializeField] protected Image image;
+    [SerializeField] protected TextMeshProUGUI optionName;
+    [SerializeField] protected TextMeshProUGUI description;
+    [SerializeField] protected Button chooseBtn;
+
     [SerializeField] protected StatsType statsType;
     [SerializeField] protected float valueAdded;
     
@@ -12,7 +22,12 @@ public class OptionCtrl : OptionBase
     protected override void LoadComponent()
     {
         base.LoadComponent();
-        LoadPlayer();    
+        LoadPlayer();
+        LoadImage();
+        LoadOptionName();
+        LoadDescription();
+        LoadChooseBtn();
+       
     }
 
     protected virtual void LoadPlayer()
@@ -20,6 +35,32 @@ public class OptionCtrl : OptionBase
         if (playerCtrl != null) return;
         playerCtrl = GameObject.Find("Player").GetComponent<PlayerCtrl>();
     }
+
+    protected virtual void LoadImage()
+    {
+        if (image != null) return;
+        image = transform.Find("ImgAndName").Find("Image").GetComponent<Image>();
+    }
+
+    protected virtual void LoadOptionName()
+    {
+        if(optionName != null) return;
+        optionName = transform.Find("ImgAndName").Find("Name").GetComponent<TextMeshProUGUI>();
+    }
+
+    protected virtual void LoadDescription()
+    {
+        if (description != null) return;
+        description = transform.Find("Description").GetComponent<TextMeshProUGUI>();
+    }
+
+    protected virtual void LoadChooseBtn()
+    {
+        if (chooseBtn != null) return;
+        chooseBtn = transform.Find("Button").GetComponent<Button>();
+    }
+
+   
     public void Init(Sprite _image, string _optionName, string _description, StatsType _statsType, float _value)
     {
         if (_image != null) image.sprite = _image;
@@ -31,9 +72,8 @@ public class OptionCtrl : OptionBase
         valueAdded = _value;
     }
 
-    protected override void Start()
+    private void OnEnable()
     {
-        base.Start();
         chooseBtn.onClick.AddListener(UpgradePlayerStatus);
     }
 
@@ -62,9 +102,6 @@ public class OptionCtrl : OptionBase
                 break;
             case StatsType.Speed:
                 playerCtrl.Speed = GetNewValue(playerCtrl.Speed);
-                break;
-            case StatsType.AddWeapon:
-                EventDispatcher.Instance.PostEvent(EventID.AddWeapon);
                 break;
         }
         playerCtrl.FillHp();
