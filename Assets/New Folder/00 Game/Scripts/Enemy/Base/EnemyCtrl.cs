@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemyCtrl : MonoBehaviour
+public class EnemyCtrl : ComponentBehavior
 {
     // dùng để quản lý các liên kết, các dữ liệu của enemy
     // khi có thay đổi hoặc lấy dữ liệu các scrip sẽ lấy thông tin từ scrip này
@@ -69,7 +69,7 @@ public class EnemyCtrl : MonoBehaviour
     {
         LoadComponent();
     }
-    protected virtual void LoadComponent()
+    protected override void LoadComponent()
     {
        
         LoadPlayer();
