@@ -51,8 +51,8 @@ public class EnemyAnim : ComponentBehavior
     }
     private void Update()
     {
-        RotateAnim();
+         RotateAnim();
         UpdateTime();
-        MoveState();
+        //MoveState();
     }
 }

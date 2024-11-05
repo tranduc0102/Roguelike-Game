@@ -33,6 +33,7 @@ public class EnemyMovement : ComponentBehavior
 
     public void Movement()
     {
+        
         Vector3 direction = (player.transform.parent.position - transform.parent.position).normalized;
         transform.parent.Translate(direction * speed * Time.deltaTime);
     }
