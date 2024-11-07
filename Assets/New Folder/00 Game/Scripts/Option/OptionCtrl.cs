@@ -72,8 +72,9 @@ public class OptionCtrl : ComponentBehavior
         valueAdded = _value;
     }
 
-    private void OnEnable()
+    protected override void Start()
     {
+        base.Start();
         chooseBtn.onClick.AddListener(UpgradePlayerStatus);
     }
 
@@ -102,6 +103,9 @@ public class OptionCtrl : ComponentBehavior
                 break;
             case StatsType.Speed:
                 playerCtrl.Speed = GetNewValue(playerCtrl.Speed);
+                break;
+            case StatsType.Weapon:
+                EventDispatcher.Instance.PostEvent(EventID.AddWeapon);
                 break;
         }
         playerCtrl.FillHp();
