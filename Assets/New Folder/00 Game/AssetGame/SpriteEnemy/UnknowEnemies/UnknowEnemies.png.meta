@@ -1,0 +1,844 @@
+fileFormatVersion: 2
+guid: 164fb124fc0c89d4e9fa0dc84b247862
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UnknowEnemies_0
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 5412
+        width: 304
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d540f5adcdcef948b102e96705f37da
+      internalID: -446898877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_1
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 5099
+        width: 829
+        height: 1015
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d3dd453fc886f74fb9429002e4f25a7
+      internalID: 1039636324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_2
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 5111
+        width: 907
+        height: 964
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2632708cf1d4af844ade1648f3c6b988
+      internalID: 1406596478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_3
+      rect:
+        serializedVersion: 2
+        x: 3376
+        y: 5430
+        width: 364
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787f97ff04773774796483a6ba36e853
+      internalID: 1627690499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_4
+      rect:
+        serializedVersion: 2
+        x: 4399
+        y: 5398
+        width: 377
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a2143f831d084d45831e74c6faca9cb
+      internalID: -1514591248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_5
+      rect:
+        serializedVersion: 2
+        x: 5432
+        y: 5374
+        width: 391
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63af129c32c5d345a23d180fdd7dca5
+      internalID: -210411432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_6
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 4326
+        width: 361
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c595c3ae44ce7234bb4bafeba99b00d3
+      internalID: 810971597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_7
+      rect:
+        serializedVersion: 2
+        x: 1206
+        y: 4233
+        width: 555
+        height: 561
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5500e335f41f9cb49943868c0b34985f
+      internalID: 1030604323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_8
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 4326
+        width: 316
+        height: 373
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 294e2c79ad10c724abfb2c4decd2b675
+      internalID: -1361286388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_9
+      rect:
+        serializedVersion: 2
+        x: 3259
+        y: 4197
+        width: 588
+        height: 699
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ffbc06702f64b4d94fb0e74b06d72c
+      internalID: -81746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_10
+      rect:
+        serializedVersion: 2
+        x: 4417
+        y: 4329
+        width: 356
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5734a2aca099f2f4db3c6ab1b2cceaa0
+      internalID: -1324858575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_11
+      rect:
+        serializedVersion: 2
+        x: 5480
+        y: 4326
+        width: 361
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7fe9aa89783ecc45a2786573bfae686
+      internalID: -114154697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_12
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 2985
+        width: 681
+        height: 729
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a5d5d199d101674392452aba1fc241e
+      internalID: 135272290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_13
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 2944
+        width: 791
+        height: 725
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e1265549b70d5649b65bac2e108a543
+      internalID: 251321874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_14
+      rect:
+        serializedVersion: 2
+        x: 2197
+        y: 2944
+        width: 576
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7d0fefe49a98064e90163d2fe498a9e
+      internalID: 1975828366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_15
+      rect:
+        serializedVersion: 2
+        x: 3403
+        y: 3266
+        width: 295
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3761c6bb894557f4d81ce7125d1f36ea
+      internalID: -1010273821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_16
+      rect:
+        serializedVersion: 2
+        x: 4211
+        y: 3117
+        width: 744
+        height: 713
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c055adffecd31d341bd777dd55277118
+      internalID: -989185526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_17
+      rect:
+        serializedVersion: 2
+        x: 5444
+        y: 3170
+        width: 361
+        height: 526
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbf35366ae1265468236c5b7033a3d0
+      internalID: 264151470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_18
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 2108
+        width: 385
+        height: 403
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a0f2ae94b64764aab5fd4c5f4fb9f7
+      internalID: 1202579879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_19
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 1860
+        width: 755
+        height: 639
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c86d9f749259141893ce3f6a57aff3
+      internalID: 1000386490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_20
+      rect:
+        serializedVersion: 2
+        x: 2239
+        y: 1923
+        width: 525
+        height: 737
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c104223ae75454409675138b48c36fb
+      internalID: 1519659192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_21
+      rect:
+        serializedVersion: 2
+        x: 3376
+        y: 2164
+        width: 346
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da3eae394c24eb4992010aeb4cb77c0
+      internalID: -536493601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_22
+      rect:
+        serializedVersion: 2
+        x: 4232
+        y: 1875
+        width: 854
+        height: 869
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a891392f0001a7428d6ae4c5c225090
+      internalID: -633453144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_23
+      rect:
+        serializedVersion: 2
+        x: 5232
+        y: 1905
+        width: 815
+        height: 916
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a2447886d2a384481ab92618b05333
+      internalID: -150194467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 857
+        width: 830
+        height: 830
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 686b49e830b8adf429fbc4a83113b667
+      internalID: 142005164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_25
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 1081
+        width: 362
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a4260bd4043474cb707478c0880361
+      internalID: -500541635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_26
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 1045
+        width: 397
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1b580fd1ef68f45b209a0a7145ea26
+      internalID: -52292108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_27
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 949
+        width: 499
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b0134cd3ad5644e9176cf9e280ac3f
+      internalID: 334165470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_28
+      rect:
+        serializedVersion: 2
+        x: 4414
+        y: 1075
+        width: 362
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2c0046876fd92458bccf9d06600555
+      internalID: 1437853434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_29
+      rect:
+        serializedVersion: 2
+        x: 5444
+        y: 1128
+        width: 382
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ddcffff7a42e94986cdccbe976ae42
+      internalID: -1092719314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_30
+      rect:
+        serializedVersion: 2
+        x: 5483
+        y: 985
+        width: 316
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb37dc674cbe435439560de21f848f86
+      internalID: -1272295095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UnknowEnemies_31
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 322
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81ebd152b72a6e34ea178f6eae1285e7
+      internalID: 1556085727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      UnknowEnemies_0: -446898877
+      UnknowEnemies_1: 1039636324
+      UnknowEnemies_10: -1324858575
+      UnknowEnemies_11: -114154697
+      UnknowEnemies_12: 135272290
+      UnknowEnemies_13: 251321874
+      UnknowEnemies_14: 1975828366
+      UnknowEnemies_15: -1010273821
+      UnknowEnemies_16: -989185526
+      UnknowEnemies_17: 264151470
+      UnknowEnemies_18: 1202579879
+      UnknowEnemies_19: 1000386490
+      UnknowEnemies_2: 1406596478
+      UnknowEnemies_20: 1519659192
+      UnknowEnemies_21: -536493601
+      UnknowEnemies_22: -633453144
+      UnknowEnemies_23: -150194467
+      UnknowEnemies_24: 142005164
+      UnknowEnemies_25: -500541635
+      UnknowEnemies_26: -52292108
+      UnknowEnemies_27: 334165470
+      UnknowEnemies_28: 1437853434
+      UnknowEnemies_29: -1092719314
+      UnknowEnemies_3: 1627690499
+      UnknowEnemies_30: -1272295095
+      UnknowEnemies_31: 1556085727
+      UnknowEnemies_4: -1514591248
+      UnknowEnemies_5: -210411432
+      UnknowEnemies_6: 810971597
+      UnknowEnemies_7: 1030604323
+      UnknowEnemies_8: -1361286388
+      UnknowEnemies_9: -81746
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

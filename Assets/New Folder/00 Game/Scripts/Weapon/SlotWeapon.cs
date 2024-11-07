@@ -41,6 +41,7 @@ public class SlotWeapon : MonoBehaviour
             GameObject newWeapon = PoolingManager.Spawn(slots[GameManager.Instance.IDWeapon].gameObject, transform.position + posWeapon[index], Quaternion.identity);
             newWeapon.transform.parent = transform;
             checkFirstWeapon = true;
+            Debug.Log(newWeapon.name);
             index++;
         }
     }

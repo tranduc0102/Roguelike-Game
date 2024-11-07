@@ -33,3 +33,8 @@ MonoBehaviour:
     description: + 2% speed
     statsType: 2
     value: 0.02
+  - image: {fileID: 0}
+    name: Add Weapon
+    description: Add Random Weapon
+    statsType: 3
+    value: 0
