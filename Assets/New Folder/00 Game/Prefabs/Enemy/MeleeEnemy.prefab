@@ -509,14 +509,14 @@ GameObject:
   - component: {fileID: 8425811510515498609}
   - component: {fileID: 9211671608110420365}
   - component: {fileID: 4132799334973184673}
-  - component: {fileID: 876151751292905162}
+  - component: {fileID: 949223708664356536}
   m_Layer: 6
   m_Name: Enemy Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8425811510515498609
 Transform:
   m_ObjectHideFlags: 0
@@ -599,7 +599,7 @@ MonoBehaviour:
   prePosition: {x: 0, y: 0, z: 0}
   curPosition: {x: 0, y: 0, z: 0}
   timer: 0
---- !u!95 &876151751292905162
+--- !u!95 &949223708664356536
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
